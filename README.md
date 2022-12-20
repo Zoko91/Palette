@@ -93,13 +93,13 @@ Add additional notes about how to deploy this on a live system. -->
 
 
 ## ✍️ Authors <a name = "authors"></a>
-- [@tristangclvs](https://github.com/tristangclvs) - ENSC 2A 
-- [@Zoko91](https://github.com/Zoko91) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 2A 
-- [@thomaschlt ](https://github.com/thomaschlt) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 2A
-- [@MurgenB ](https://github.com/MurgenB) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 2A
-- [@RedzCode  ](https://github.com/RedzCode) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 1A
-- [@cjeandes  ](https://github.com/cjeandes) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 1A
-- [@axelleGuillemot  ](https://github.com/axelleGuillemot) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 1A
+- [@tristangclvs](https://github.com/tristangclvs) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 2A 
+- [@Zoko91](https://github.com/Zoko91) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 2A 
+- [@thomaschlt ](https://github.com/thomaschlt) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ENSC 2A
+- [@MurgenB ](https://github.com/MurgenB) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ENSC 2A
+- [@RedzCode  ](https://github.com/RedzCode) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ENSC 1A
+- [@cjeandes  ](https://github.com/cjeandes) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 1A
+- [@axelleGuillemot  ](https://github.com/axelleGuillemot) &nbsp;- ENSC 1A
 
 <!-- ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 - Hat tip to anyone whose code was used
