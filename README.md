@@ -71,7 +71,7 @@ After activating the venv, if you never installed Flask
 
 Launch the website server on you localhost.
 ```
->>> flask --app run myApp run
+>>> flask --app myApp run
 ```
 
 ## 🔧 Running the tests <a name = "tests"></a>
