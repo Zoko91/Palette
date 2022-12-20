@@ -1,0 +1,13 @@
+#navbarLinks {
+    justify-content: center;
+}
+
+.navbar-nav {
+    width: 30%;
+    justify-content: space-evenly;
+    transform: translateX(-3rem);
+}
+
+.text-colors {
+    -webkit-text-stroke: 1.5px black;
+}
