@@ -105,13 +105,41 @@ Add additional notes about how to deploy this on a live system. -->
 
 
 ## ✍️ Authors <a name = "authors"></a>
-- [@tristangclvs](https://github.com/tristangclvs) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 2A 
-- [@Zoko91](https://github.com/Zoko91) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 2A 
-- [@thomaschlt ](https://github.com/thomaschlt) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ENSC 2A
-- [@MurgenB ](https://github.com/MurgenB) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ENSC 2A
-- [@RedzCode  ](https://github.com/RedzCode) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ENSC 1A
-- [@cjeandes  ](https://github.com/cjeandes) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 1A
-- [@axelleGuillemot  ](https://github.com/axelleGuillemot) &nbsp;- ENSC 1A
+<table>
+  <tr>
+    <th>Member</th>
+    <th>Class</th>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/tristangclvs"> @tristangclvs </a></td>
+    <td>ENSC 2A </td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/Zoko91"> @Zoko91 </a></td>
+    <td>ENSC 2A </td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/thomaschlt"> @thomaschlt </a></td>
+    <td>ENSC 2A </td>
+  </tr>
+    <tr>
+    <td><a href="https://github.com/MurgenB"> @MurgenB </a></td>
+    <td>ENSC 2A </td>
+  </tr>
+    <tr>
+    <td><a href="https://github.com/RedzCode"> @RedzCode </a></td>
+    <td>ENSC 2A </td>
+  </tr>
+    <tr>
+    <td><a href="https://github.com/cjeandes"> @cjeandes </a></td>
+    <td>ENSC 2A </td>
+  </tr>
+    <tr>
+    <td><a href="https://github.com/axelleGuillemot"> @axelleGuillemot </a></td>
+    <td>ENSC 2A </td>
+  </tr>
+</table>
+
 
 <!-- ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 - Hat tip to anyone whose code was used
