@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img  src="" alt="Palette logo"></a>
+ <img  src="templates/ressources/palette_blanc.png" alt="Palette logo"></a>
 </p>
 
 <h1 align="center">Palette</h1>
@@ -86,22 +86,22 @@ Add notes about how to use the system. -->
 Add additional notes about how to deploy this on a live system. -->
 
 ## ⛏️ Built Using <a name = "built_using"></a>
-- [C#](https://dotnet.microsoft.com/en-us/languages/csharp/) - Programming Language
+- [Python3](https://www.python.org/download/releases/3.0/) - Programming Language
+- [Flask](https://flask.palletsprojects.com/en/2.2.x/) - Web development framework
 - [HTML | CSS | JavaScript](https://www.freecodecamp.org/news/html-css-and-javascript-explained-for-beginners/) - Web Language
-- [ASP.Net Core](https://dotnet.microsoft.com/en-us/learn/aspnet/what-is-aspnet-core/) - Web development framework
+
 
 
 ## ✍️ Authors <a name = "authors"></a>
-- [@tristangclvs](https://github.com/tristangclvs) - ENSC 2A / Groupe 1
-- [@Zoko91](https://github.com/Zoko91) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 2A / Groupe 1
-- Les autres
+- [@tristangclvs](https://github.com/tristangclvs) - ENSC 2A 
+- [@Zoko91](https://github.com/Zoko91) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 2A 
+- [@thomaschlt ](https://github.com/thomaschlt) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 2A
+- [@MurgenB ](https://github.com/MurgenB) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 2A
+- [@RedzCode  ](https://github.com/RedzCode) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 1A
+- [@cjeandes  ](https://github.com/cjeandes) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 1A
+- [@axelleGuillemot  ](https://github.com/axelleGuillemot) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ENSC 1A
 
 <!-- ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 - Hat tip to anyone whose code was used
 - Inspiration
 - References -->
-
-<br><br><br>
-<p align="center">
- <img  src="wwwroot/images/logo.min.white.png" width="15%" alt="Work Adventure logo">
-</p>
