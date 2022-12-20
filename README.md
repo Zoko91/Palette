@@ -54,7 +54,7 @@ Say what the step will be
 git clone https://github.com/Zoko91/Palette.git
 cd Palette
 ```
-
+<!--
 ```
 # Windows
 >>> venvWindows\Scripts\activate
@@ -62,7 +62,7 @@ cd Palette
 # MacOS
 >>> .venv/bin/activate
 ```
-
+-->
 After activating the venv, if you never installed Flask
 
 ```
@@ -71,7 +71,7 @@ After activating the venv, if you never installed Flask
 
 Launch the website server on you localhost.
 ```
->>> flask --app run myApp run
+>>> flask --app myApp run
 ```
 
 ## 🔧 Running the tests <a name = "tests"></a>
