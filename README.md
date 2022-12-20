@@ -51,16 +51,28 @@ A step by step series of examples that tell you how to get a development env run
 Say what the step will be
 
 ```
-Give the example
+git clone https://github.com/Zoko91/Palette.git
+cd Palette
 ```
 
-And repeat
+```
+# Windows
+>>> venvWindows\Scripts\activate
+
+# MacOS
+>>> .venv/bin/activate
+```
+
+After activating the venv, if you never installed Flask
 
 ```
-until finished
+>>> pip install Flask
 ```
 
-End with an example of getting some data out of the system or using it for a little demo.
+Launch the website server on you localhost.
+```
+>>> flask --app run myApp run
+```
 
 ## 🔧 Running the tests <a name = "tests"></a>
 Explain how to run the automated tests for this system.
