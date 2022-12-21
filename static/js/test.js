@@ -1,13 +1,14 @@
 
 var path = window.location.pathname;
 var page = path.split("/").pop();
-// console.log(page);
-if (page == '') {
-    page = "main";
+console.log(page);
+if (page != "palette" && page != "history") {
+    if (page == '') {
+        page = "main";
+    }
+    let currentPage = document.getElementById(`${page}`);
+    currentPage.classList.add("active");
 }
-let currentPage = document.getElementById(`${page}`);
-currentPage.classList.add("active");
-
 
 let colors = document.querySelector('.text-colors');
 sweep(colors, 'color', '#a8f', '#a8f', { direction: -1, duration: 100000 });
