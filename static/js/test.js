@@ -1,17 +1,21 @@
 
 var path = window.location.pathname;
 var page = path.split("/").pop();
-console.log(page);
 if (page != "palette" && page != "history") {
     if (page == '') {
         page = "main";
+
+        // Titre colors qui change de couleurs
+        let colors = document.querySelector('.text-colors');
+        sweep(colors, 'color', '#a8f', '#a8f', { direction: -1, duration: 100000 });
+
+        loop();
     }
     let currentPage = document.getElementById(`${page}`);
     currentPage.classList.add("active");
 }
 
-let colors = document.querySelector('.text-colors');
-sweep(colors, 'color', '#a8f', '#a8f', { direction: -1, duration: 100000 });
+
 
 function loop() {
     sweep(colors, ['color'], '#df2f20', '#da255a', {
@@ -21,7 +25,7 @@ function loop() {
         space: 'HSL'
     });
 }
-loop();
+
 
 // let color_dictionary = ['#F00', '#0F0', '#00F'];
 // let input = document.getElementById("input");
