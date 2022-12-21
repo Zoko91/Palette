@@ -1,3 +1,17 @@
+@font-face {
+    font-family: VarelaRound;
+    src: url("../fonts/VarelaRound-Regular.ttf");
+}
+
+@font-face {
+    font-family: SpaceGrotesk;
+    src: url("../fonts/SpaceGrotesk-VariableFont_wght.ttf");
+}
+
+body {
+    font-family: VarelaRound;
+}
+
 #navbarLinks {
     justify-content: center;
 }
@@ -29,6 +43,7 @@ br::selection {
 }
 
 .palette-pres {
+    font-family: SpaceGrotesk;
     font-style: italic;
     -webkit-text-fill-color: rgb(131, 131, 131) !important;
     margin-block: 1rem;
@@ -47,9 +62,11 @@ br::selection {
     border: 0;
     transform: scale(0.08);
     background: transparent;
+    margin-top: 10vh;
 }
 
 .input-prompt {
+    margin-top: 10vh;
     width: 70%;
     border-radius: 25px;
     border: 2px solid black;
