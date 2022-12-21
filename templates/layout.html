@@ -19,14 +19,14 @@ url_for('static',filename='styles/cards.css') }}"
       href="{{
 url_for('static',filename='styles/general.css') }}"
     />
+    <script
+      type="text/javascript"
+      src="{{
+      url_for('static',filename='js/script.js') }}"
+    ></script>
   </head>
   <body>
     {% include 'includes/_navbar.html' %}
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
     <div class="container">{% block body %}{% endblock %}</div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

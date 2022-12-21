@@ -1,0 +1,13 @@
+body {
+  overflow: hidden;
+}
+
+#palette {
+  margin-top: 40vh;
+  transform: translateY(-50%);
+}
+
+#home {
+  margin-top: 38vh;
+  transform: translateY(-50%);
+}
