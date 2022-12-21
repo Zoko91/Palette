@@ -1,7 +1,8 @@
 {% extends 'layout.html' %} {% block body %}
 
-<div class="container jumbotron text-center" id="palette">
+<div class="container jumbotron text-center" id="history">
   <h1><strong>HERE IS YOUR PALETTE HISTORY</strong></h1>
-  {% include 'includes/_colors.html' %}
+  {% for i in range(0, colors|length)%}{% with listColors = colors[i] %} {%
+  include 'includes/_colors.html' %}{% endwith %} {%endfor%}
 </div>
 {% endblock %}

@@ -9,8 +9,15 @@ def index():
 
 @app.route('/palette')  
 def palette():
-	colors = ["A new farm close to a little pound","#0000", "#FF800", "#56284", "#56FFF", "#00FFF"]
-	return render_template('palette.html',len = len(colors), colors=colors)
+	colors = ["An old farm close to a little pound","#eea23f", "#9365c1", "#6ac941", "#e95dcf", "#438ccc"]
+	return render_template('palette.html', colors=colors)
+
+@app.route('/history')  
+def history():
+	colors = [["An old farm close to a little pound","#eea23f", "#9365c1", "#6ac941", "#e95dcf", "#438ccc"],
+	["The desert of Sahara","#007a7a", "#f1d153", "#8d0703", "#00ae00", "#efaa06"],
+	["The moon","#1e3cab", "#0c2b36", "#dcdaee", "#b69264", "#5d0056"]]
+	return render_template('history.html',colors=colors)
 
 @app.route("/about")
 def about():

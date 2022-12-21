@@ -1,9 +1,11 @@
 {% block body %}
-<!-- <div style="background-color: red">
-  <h3>CARD</h3>
-</div> -->
 <div class="container-card">
-  <div class="card" onclick="flipCard(this)">
+  <div
+    class="card"
+    id="card-{{cardNum}}"
+    onclick="flipCard(this)"
+    card-color="{{colorName}}"
+  >
     <div class="back">
       <img src="exodia.jpeg" alt="Card back" />
     </div>
