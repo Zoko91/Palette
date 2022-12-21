@@ -1,3 +1,24 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 #container-palette {
   margin-top: 3%;
   display: flex;
@@ -92,4 +113,23 @@
 
 .back-copy img {
   transform: scale(0.67);
+}
+
+.back-copy-confirm {
+  position: absolute;
+  right: -19%;
+  top: 47%;
+  background-color: gray;
+  padding: 2%;
+  border-radius: 10px;
+  display: none;
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fadeIn 2s;
+}
+
+.fade-out {
+  animation: fadeOut 2s;
 }

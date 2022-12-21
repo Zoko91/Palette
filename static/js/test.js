@@ -50,14 +50,25 @@ for (let card of cards) {
     backCopy.addEventListener("click", (e) => {
         card.classList.toggle("flipped");
         var backColor = card.querySelector(".back-color").innerText;
+        var backCopyConfirm = card.querySelector(".back-copy-confirm");
 
         if (navigator.clipboard) {
             navigator.clipboard.writeText(backColor).then(() => {
                 // alert('Copied to clipboard')
+
+                backCopyConfirm.classList.add("fade-in");
+                backCopyConfirm.style.display = "block";
+                setTimeout(() => {
+                    backCopyConfirm.classList.replace("fade-in", "fade-out");
+                    setTimeout(() => {
+                        backCopyConfirm.style.display = "none";
+                        backCopyConfirm.classList.remove("fade-out");
+                    }, 2000);
+                }, 2000)
                 return;
             })
         } else {
-            console.log('Browser Not compatible')
+            alert('Browser Not compatible with copy');
         }
     });
 
