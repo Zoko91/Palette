@@ -11,3 +11,76 @@
 .text-colors {
     -webkit-text-stroke: 1.5px black;
 }
+
+.text-colors::-moz-selection {
+    background-color: transparent;
+}
+
+.text-colors::selection {
+    background-color: transparent;
+}
+
+br::-moz-selection {
+    background-color: transparent;
+}
+
+br::selection {
+    background-color: transparent;
+}
+
+.palette-pres {
+    font-style: italic;
+    -webkit-text-fill-color: rgb(131, 131, 131) !important;
+    margin-block: 1rem;
+}
+
+.form-input {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+
+#btn-continue {
+    position: absolute;
+    right: -2.8em;
+    top: -14.6em;
+    border: 0;
+    transform: scale(0.08);
+    background: transparent;
+}
+
+.input-prompt {
+    width: 70%;
+    border-radius: 25px;
+    border: 2px solid black;
+    padding-left: 2%;
+    padding-block: 0.3%;
+    padding-right: 3.5em;
+    height: 47px;
+    font-size: x-large;
+    /* background: white url("../images/next.png") right no-repeat;
+    background-size: 3%;
+    background-position-x: 97%; */
+}
+
+.bg-transparent {
+    background: linear-gradient(16deg, rgba(255, 0, 0, 1) 24%, rgba(0, 0, 255, 1) 50%, rgba(0, 255, 0, 1) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: black;
+}
+
+.bg-transparent::-moz-selection {
+    /* color: ; */
+    background-color: transparent;
+    background: linear-gradient(16deg, rgba(255, 0, 0, 1) 24%, rgba(0, 0, 255, 1) 50%, rgba(0, 255, 0, 1) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-transparent::selection {
+    /* color: linear-gradient(16deg, rgba(255, 0, 0, 1) 24%, rgba(0, 0, 255, 1) 50%, rgba(0, 255, 0, 1) 80%); */
+    background-color: transparent;
+    background: linear-gradient(16deg, rgba(255, 0, 0, 1) 24%, rgba(0, 0, 255, 1) 50%, rgba(0, 255, 0, 1) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
