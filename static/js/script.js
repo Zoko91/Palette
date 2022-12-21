@@ -5,8 +5,10 @@ function flipCard(element) {
 function setColors() {
   var cards = document.getElementsByClassName("card");
   for (let card of cards) {
-    console.log(card.getAttribute("card-color"));
-    card.style.background = card.getAttribute("card-color");
+    var frontCard = card.querySelector(".front");
+    var backCard = card.querySelector(".back");
+    frontCard.style.background = card.getAttribute("card-color");
+    backCard.style.background = card.getAttribute("card-color");
   }
 }
 

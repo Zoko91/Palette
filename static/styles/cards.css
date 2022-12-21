@@ -54,3 +54,12 @@
 .card.flipped .back {
   z-index: 0;
 }
+
+.back-info {
+  height: 70%;
+  background-color: white;
+}
+
+.back-color {
+  color: white;
+}
