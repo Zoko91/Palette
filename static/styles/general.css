@@ -104,3 +104,20 @@ br::selection {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.nav-link {
+    position: relative;
+}
+
+.active::after {
+    content: "";
+    position: absolute;
+    left: 57%;
+    bottom: 16px;
+    width: 100px;
+    height: 14px;
+    transform: skew(-12deg) translateX(-50%);
+    background: rgba(238, 111, 87, 0.5);
+    z-index: -1;
+    /* border-bottom: 2px solid #ac1919; */
+}
