@@ -66,6 +66,7 @@ br::selection {
 .bg-transparent {
     background: linear-gradient(16deg, rgba(255, 0, 0, 1) 24%, rgba(0, 0, 255, 1) 50%, rgba(0, 255, 0, 1) 80%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: black;
 }
 
@@ -74,6 +75,7 @@ br::selection {
     background-color: transparent;
     background: linear-gradient(16deg, rgba(255, 0, 0, 1) 24%, rgba(0, 0, 255, 1) 50%, rgba(0, 255, 0, 1) 80%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -82,5 +84,6 @@ br::selection {
     background-color: transparent;
     background: linear-gradient(16deg, rgba(255, 0, 0, 1) 24%, rgba(0, 0, 255, 1) 50%, rgba(0, 255, 0, 1) 80%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
