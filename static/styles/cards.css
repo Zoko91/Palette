@@ -116,10 +116,10 @@
 }
 
 .back-copy-confirm {
+  color: white;
   position: absolute;
   right: -19%;
   top: 47%;
-  background-color: gray;
   padding: 2%;
   border-radius: 10px;
   display: none;

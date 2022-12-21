@@ -55,7 +55,7 @@ for (let card of cards) {
         if (navigator.clipboard) {
             navigator.clipboard.writeText(backColor).then(() => {
                 // alert('Copied to clipboard')
-
+                backCopyConfirm.style.background = card.getAttribute("card-color");
                 backCopyConfirm.classList.add("fade-in");
                 backCopyConfirm.style.display = "block";
                 setTimeout(() => {
