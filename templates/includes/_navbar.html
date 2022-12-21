@@ -1,18 +1,34 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="../home.html" style="margin-left: 1rem;">
+  <a class="navbar-brand" href="/" style="margin-left: 1rem;">
     <img src="{{
-url_for('static',filename='images/logo_palette.png') }}" alt="Palette's logo" width="70%">
+      url_for('static',filename='images/logo_palette.png') }}" alt="Palette's
+      logo" width="70%">
   </a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks"
-    aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarLinks"
+    aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle
+    navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse " id="navbarLinks">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">PALETTE</a>
+      {% if current_page == "home" %}
+      <a class="nav-item nav-link active" href="/">PALETTE</a>
       <a class="nav-item nav-link" href="about">ABOUT US</a>
-      <a class="nav-item nav-link" href="#">CONTACT</a>
+      <a class="nav-item nav-link" href="contact">CONTACT</a>
+
+      {% elif current_page == "about" %}
+      <a class="nav-item nav-link" href="/">PALETTE</a>
+      <a class="nav-item nav-link active" href="about">ABOUT US</a>
+      <a class="nav-item nav-link" href="contact">CONTACT</a>
+
+      {% elif current_page == "contact" %}
+      <a class="nav-item nav-link" href="/">PALETTE</a>
+      <a class="nav-item nav-link" href="about">ABOUT US</a>
+      <a class="nav-item nav-link active" href="contact">CONTACT</a>
+
+      {% endif %}
     </div>
   </div>
 </nav>

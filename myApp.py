@@ -4,13 +4,16 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-	return render_template('home.html')
+	current_page = "home"
+	return render_template('home.html', current_page = current_page)
 
 
 @app.route("/about")
 def about():
-	return render_template('about.html')
+	current_page = "about"
+	return render_template('about.html', current_page = current_page)
 	
 @app.route("/contact")
 def contact():
-	return render_template('contact.html')
+	current_page = "contact"
+	return render_template('contact.html', current_page = current_page)

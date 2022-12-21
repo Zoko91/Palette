@@ -13,3 +13,18 @@ function loop() {
     });
 }
 loop();
+
+// let color_dictionary = ['#F00', '#0F0', '#00F'];
+// let input = document.getElementById("input");
+// let i = 0;
+// let stringArray = '';
+// input.addEventListener("keypress", () => {
+
+//     // console.log(input.value.slice(-1));
+//     stringArray = input.value.split();
+//     stringArray.forEach(element => {
+//         input.value.innerHTML += `<span style="color:${color_dictionary[i % 3]}">${element}</span>`;
+//     });
+//     input.style.caretColor = color_dictionary[i % 3];
+//     i++;
+// });
