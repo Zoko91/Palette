@@ -3,15 +3,20 @@
   <div
     class="card-color"
     id="card-{{cardNum}}"
-    onclick="flipCard(this)"
-    card-color="{{colorName}}"
-  >
+    card-color="{{colorName}}">
     <div class="back">
       <div class="back-info">
         <p>
           Royal red is an elegant color that brings a trustful relation between
           humans
         </p>
+      </div>
+      <div class="back-copy">
+        <img
+          src="{{
+          url_for('static',filename='images/copy.png') }}"
+          alt="Copy"
+          />
       </div>
       <div class="back-color">{{colorName}}</div>
     </div>

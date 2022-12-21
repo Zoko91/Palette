@@ -9,7 +9,7 @@ if (page != "palette" && page != "history") {
         let colors = document.querySelector('.text-colors');
         sweep(colors, 'color', '#a8f', '#a8f', { direction: -1, duration: 100000 });
 
-        loop();
+        loop(colors);
     }
     let currentPage = document.getElementById(`${page}`);
     currentPage.classList.add("active");
@@ -17,7 +17,7 @@ if (page != "palette" && page != "history") {
 
 
 
-function loop() {
+function loop(colors) {
     sweep(colors, ['color'], '#df2f20', '#da255a', {
         callback: loop,
         direction: 1,
@@ -32,13 +32,36 @@ function loop() {
 // let i = 0;
 // let stringArray = '';
 // input.addEventListener("keypress", () => {
-
 //     // console.log(input.value.slice(-1));
 //     stringArray = input.value.split();
 //     stringArray.forEach(element => {
-//         input.value.innerHTML += `<span style="color:${color_dictionary[i % 3]}">${element}</span>`;
+//         input.value.innerText += `<span style="color:red">${element}</span>`;
 //     });
 //     input.style.caretColor = color_dictionary[i % 3];
 //     i++;
 // });
 
+var cards = document.getElementsByClassName("card-color");
+for (let card of cards) {
+    var backCopy = card.querySelector(".back-copy");
+
+    //console.log(backColor.innerHTML);
+
+    backCopy.addEventListener("click", (e) => {
+        card.classList.toggle("flipped");
+        var backColor = card.querySelector(".back-color").innerText;
+
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(backColor).then(() => {
+                // alert('Copied to clipboard')
+                return;
+            })
+        } else {
+            console.log('Browser Not compatible')
+        }
+    });
+
+    card.addEventListener("click", () => {
+        card.classList.toggle("flipped");
+    });
+}

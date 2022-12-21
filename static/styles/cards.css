@@ -32,12 +32,15 @@
   height: 100%;
   object-fit: cover;
 }
+
 .card-color .back {
   transform: rotateY(-180deg);
 }
+
 .card-color.flipped .back {
   transform: rotateY(0deg);
 }
+
 .card-color.flipped .front {
   transform: rotateY(180deg);
 }
@@ -45,6 +48,8 @@
 .front,
 .back {
   z-index: 0;
+  border-radius: 25px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .card-color.flipped .front {
@@ -56,10 +61,35 @@
 }
 
 .back-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   height: 70%;
   background-color: white;
+  border-radius: 25px 25px 0px 0px;
+  padding-inline: 8%;
 }
 
 .back-color {
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  font-size: x-large;
+}
+
+.back-copy {
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+
+  position: absolute;
+  right: 5%;
+  top: 61%;
+}
+
+.back-copy img {
+  transform: scale(0.67);
 }

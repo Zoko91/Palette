@@ -7,8 +7,10 @@ function setColors() {
   for (let card of cards) {
     var frontCard = card.querySelector(".front");
     var backCard = card.querySelector(".back");
+    var backCopy = card.querySelector(".back-copy");
     frontCard.style.background = card.getAttribute("card-color");
     backCard.style.background = card.getAttribute("card-color");
+    backCopy.style.background = card.getAttribute("card-color");
   }
 }
 
