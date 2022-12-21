@@ -9,7 +9,7 @@
   flex: 1 1;
 }
 
-.card {
+.card-color {
   width: 200px;
   height: 300px;
   perspective: 1000px;
@@ -32,13 +32,13 @@
   height: 100%;
   object-fit: cover;
 }
-.card .back {
+.card-color .back {
   transform: rotateY(-180deg);
 }
-.card.flipped .back {
+.card-color.flipped .back {
   transform: rotateY(0deg);
 }
-.card.flipped .front {
+.card-color.flipped .front {
   transform: rotateY(180deg);
 }
 
@@ -47,11 +47,11 @@
   z-index: 0;
 }
 
-.card.flipped .front {
+.card-color.flipped .front {
   z-index: 1;
 }
 
-.card.flipped .back {
+.card-color.flipped .back {
   z-index: 0;
 }
 

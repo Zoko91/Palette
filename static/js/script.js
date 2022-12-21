@@ -3,7 +3,7 @@ function flipCard(element) {
 }
 
 function setColors() {
-  var cards = document.getElementsByClassName("card");
+  var cards = document.getElementsByClassName("card-color");
   for (let card of cards) {
     var frontCard = card.querySelector(".front");
     var backCard = card.querySelector(".back");
