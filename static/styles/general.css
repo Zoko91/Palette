@@ -1,149 +1,146 @@
 @font-face {
-  font-family: VarelaRound;
-  src: url("../fonts/VarelaRound-Regular.ttf");
+    font-family: VarelaRound;
+    src: url("../fonts/VarelaRound-Regular.ttf");
 }
 
 @font-face {
-  font-family: SpaceGrotesk;
-  src: url("../fonts/SpaceGrotesk-VariableFont_wght.ttf");
+    font-family: SpaceGrotesk;
+    src: url("../fonts/SpaceGrotesk-VariableFont_wght.ttf");
 }
 
 body {
-  overflow: hidden;
-  font-family: VarelaRound;
+    overflow: hidden;
+    font-family: VarelaRound;
+    background: linear-gradient(90deg,
+            #ECE9E6 0%,
+            white 100%);
 }
 
 #palette {
-  margin-top: 40vh;
-  transform: translateY(-50%);
+    margin-top: 40vh;
+    transform: translateY(-50%);
 }
 
 #home {
-  margin-top: 38vh;
-  transform: translateY(-50%);
+    margin-top: 38vh;
+    transform: translateY(-50%);
 }
 
 #navbarLinks {
-  justify-content: center;
+    justify-content: center;
 }
 
 .navbar-nav {
-  width: 30%;
-  justify-content: space-evenly;
-  transform: translateX(-3rem);
+    width: 30%;
+    justify-content: space-evenly;
+    transform: translateX(-3rem);
 }
 
 .text-colors {
-  -webkit-text-stroke: 1.5px black;
+    -webkit-text-stroke: 1.5px black;
 }
 
 .text-colors::-moz-selection {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .text-colors::selection {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 br::-moz-selection {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 br::selection {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .palette-pres {
-  font-family: SpaceGrotesk;
-  font-style: italic;
-  -webkit-text-fill-color: rgb(131, 131, 131) !important;
-  margin-block: 1rem;
+    font-family: SpaceGrotesk;
+    font-style: italic;
+    -webkit-text-fill-color: rgb(131, 131, 131) !important;
+    margin-block: 1rem;
 }
 
 .form-input {
-  position: relative;
-  width: 100%;
-  display: inline-block;
+    position: relative;
+    width: 100%;
+    display: inline-block;
 }
 
 #btn-continue {
-  position: absolute;
-  right: -2.8em;
-  top: -14.6em;
-  border: 0;
-  transform: scale(0.08);
-  background: transparent;
-  margin-top: 10vh;
+    position: absolute;
+    right: -2.8em;
+    top: -14.6em;
+    border: 0;
+    transform: scale(0.08);
+    background: transparent;
+    margin-top: 10vh;
 }
 
 .input-prompt {
-  margin-top: 10vh;
-  width: 70%;
-  border-radius: 25px;
-  border: 2px solid black;
-  padding-left: 2%;
-  padding-block: 0.3%;
-  padding-right: 3.5em;
-  height: 47px;
-  font-size: x-large;
-  /* background: white url("../images/next.png") right no-repeat;
+    margin-top: 10vh;
+    width: 70%;
+    border-radius: 25px;
+    border: 2px solid black;
+    padding-left: 2%;
+    padding-block: 0.3%;
+    padding-right: 3.5em;
+    height: 47px;
+    font-size: x-large;
+    /* background: white url("../images/next.png") right no-repeat;
     background-size: 3%;
     background-position-x: 97%; */
 }
 
 .bg-transparent {
-  background: linear-gradient(
-    16deg,
-    rgba(255, 0, 0, 1) 24%,
-    rgba(0, 0, 255, 1) 50%,
-    rgba(0, 255, 0, 1) 80%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: black;
+    background: linear-gradient(16deg,
+            rgba(255, 0, 0, 1) 24%,
+            rgba(0, 0, 255, 1) 50%,
+            rgba(0, 255, 0, 1) 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: black;
 }
 
 .bg-transparent::-moz-selection {
-  /* color: ; */
-  background-color: transparent;
-  background: linear-gradient(
-    16deg,
-    rgba(255, 0, 0, 1) 24%,
-    rgba(0, 0, 255, 1) 50%,
-    rgba(0, 255, 0, 1) 80%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+    /* color: ; */
+    background-color: transparent;
+    background: linear-gradient(16deg,
+            rgba(255, 0, 0, 1) 24%,
+            rgba(0, 0, 255, 1) 50%,
+            rgba(0, 255, 0, 1) 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .bg-transparent::selection {
-  /* color: linear-gradient(16deg, rgba(255, 0, 0, 1) 24%, rgba(0, 0, 255, 1) 50%, rgba(0, 255, 0, 1) 80%); */
-  background-color: transparent;
-  background: linear-gradient(
-    16deg,
-    rgba(255, 0, 0, 1) 24%,
-    rgba(0, 0, 255, 1) 50%,
-    rgba(0, 255, 0, 1) 80%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+    /* color: linear-gradient(16deg, rgba(255, 0, 0, 1) 24%, rgba(0, 0, 255, 1) 50%, rgba(0, 255, 0, 1) 80%); */
+    background-color: transparent;
+    background: linear-gradient(16deg,
+            rgba(255, 0, 0, 1) 24%,
+            rgba(0, 0, 255, 1) 50%,
+            rgba(0, 255, 0, 1) 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-link {
-  position: relative;
+    position: relative;
 }
 
 .active::after {
-  content: "";
-  position: absolute;
-  left: 57%;
-  bottom: 16px;
-  width: 100px;
-  height: 14px;
-  transform: skew(-12deg) translateX(-50%);
-  background: rgba(238, 111, 87, 0.5);
-  z-index: -1;
-  /* border-bottom: 2px solid #ac1919; */
+    content: "";
+    position: absolute;
+    left: 57%;
+    bottom: 16px;
+    width: 100px;
+    height: 14px;
+    transform: skew(-12deg) translateX(-50%);
+    background: rgba(238, 111, 87, 0.5);
+    z-index: -1;
+    /* border-bottom: 2px solid #ac1919; */
 }
