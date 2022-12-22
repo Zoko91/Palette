@@ -2,8 +2,11 @@
 
 <div class="container jumbotron text-center" id="history">
   <h1><strong>HERE IS YOUR PALETTE HISTORY</strong></h1>
-  {% for i in range(0, colors|length)%} {% with listColors = colors[i] %}
+  {% if palettes|length == 0 %}
+  <p>The history is empty</p>
+  {% else %} {% for i in range(0,palettes|length)%} {% with listColors =
+  palettes[i] %}
   <p><strong>{{listColors[0]}}</strong></p>
-  {% include 'includes/_colors.html' %}{% endwith %} {%endfor%}
+  {% include 'includes/_colors.html' %} {% endwith %} {%endfor%} {% endif %}
 </div>
 {% endblock %}
