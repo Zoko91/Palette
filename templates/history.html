@@ -5,14 +5,12 @@
   {% if palettes|length == 0 %}
   <p>The history is empty</p>
   {% else %}
-  <div class="wrapper-history">
-    <div class="carousel-history">
-      {% for i in range(0,palettes|length)%} {% with listColors = palettes[i] %}
-      <div class="carousel-history__item">
-        <p><strong>{{listColors[0]}}</strong></p>
-        {% include 'includes/_colors.html' %}
-      </div>
-      {% endwith %} {%endfor%}
+  <div>
+    <div>
+      {% for i in range(0,palettes|length)%} {% with listColors = palettes[i][1]
+      %}
+      <p><strong>{{palettes[i][0]}}</strong></p>
+      {% include 'includes/_colors.html' %} {% endwith %} {%endfor%}
     </div>
   </div>
   {% endif %}

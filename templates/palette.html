@@ -1,7 +1,7 @@
 {% extends 'layout.html' %} {% block body %}
 <div class="container jumbotron text-center" id="palette">
   <h1><strong>{{colors[0]}}</strong></h1>
-  {% with listColors = colors %} {% include 'includes/_colors.html' %}{% endwith
-  %}
+  {% with listColors = colors[1] %} {% include 'includes/_colors.html' %}{%
+  endwith %}
 </div>
 {% endblock %}

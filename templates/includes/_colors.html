@@ -1,7 +1,7 @@
 {% block body %}
 
 <div id="container-palette">
-  {% for i in range(1, listColors|length) %} {% with cardNum = i, colorName =
+  {% for i in range(0, listColors|length) %} {% with cardNum = i, colorInfo =
   listColors[i] %} {% include 'includes/_cards.html' %}{% endwith %} {%endfor%}
 </div>
 

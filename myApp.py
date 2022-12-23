@@ -12,29 +12,20 @@ def index():
 
 @app.route('/palette', methods=['GET', 'POST'])  
 def palette():
-	colors = getPalette()
-	palettes = []
-	if 'palettes' in request.cookies:
-		palettes = json.loads(request.cookies.get('palettes'))
-		expire_date = datetime.datetime.strptime(palettes[0], "%m/%d/%Y").date()
-		if len(palettes[1:]) == 3 :
-			palettes.pop(1)
-	else:
-		expire_date = datetime.datetime.now()
-		expire_date = expire_date + datetime.timedelta(days=30)
-		palettes.append(expire_date.strftime("%m/%d/%Y"))
-
 	if request.method == 'POST':
 		prompt = request.form['prompt']
 		if not prompt:
 			flash('Prompt is required!')
-			return redirect(url_for('index'))
+			res = make_response(redirect(url_for('index')))
 		else:
-			# return redirect(url_for('index'))
+			colors = [prompt]
+			colors.append(getPalette())
+			palettes, expire_date = setCookies()
 			palettes.append(colors)
 			res = make_response(render_template('palette.html', colors=colors, prompt=request.form['prompt']))
 			res.set_cookie('palettes', json.dumps(palettes, indent=2), expires=expire_date)
-	
+	else :
+		res = make_response(redirect(url_for('index')))
 	return res
 
 @app.route('/history')  
@@ -55,16 +46,56 @@ def contact():
 	return render_template('contact.html', current_page = current_page)
 
 def getPalette():
-	return palettes = [[' #FFC0CB', ' Pink', ' Joy', ' A feeling of happiness and excitement'], [' #F5F5DC', ' Beige', ' Calm', ' A feeling of peace and relaxation'], [' #FFFACD', ' Lemon Chiffon', ' Playfulness', ' A feeling of fun and amusement'], [' #ADD8E6', ' Light Blue', ' Creativity', ' A feeling of imagination and inventiveness'], [' #E0FFFF', ' Light Cyan', ' Freedom', ' A feeling of liberation and independence']]
+	return [[' #FFC0CB', ' Pink', ' Joy', ' A feeling of happiness and excitement'],
+	[' #F5F5DC', ' Beige', ' Calm', ' A feeling of peace and relaxation'],
+	[' #FFFACD', ' Lemon Chiffon', ' Playfulness', ' A feeling of fun and amusement'],
+	[' #ADD8E6', ' Light Blue', ' Creativity', ' A feeling of imagination and inventiveness'],
+	[' #E0FFFF', ' Light Cyan', ' Freedom', ' A feeling of liberation and independence']]
+
+def setCookies():
+	palettes = []
+	if 'palettes' in request.cookies:
+		palettes = json.loads(request.cookies.get('palettes'))
+		expire_date = datetime.datetime.strptime(palettes[0], "%m/%d/%Y").date()
+		if len(palettes[1:]) == 3 :
+			palettes.pop(1)
+	else:
+		expire_date = datetime.datetime.now()
+		expire_date = expire_date + datetime.timedelta(days=30)
+		palettes.append(expire_date.strftime("%m/%d/%Y"))
+
+	return palettes, expire_date
 
 """
-colors = [["An old farm close to a little pound","#eea23f", "#9365c1", "#6ac941", "#e95dcf", "#438ccc"],
-	["The desert of Sahara","#007a7a", "#f1d153", "#8d0703", "#00ae00", "#efaa06"],
-	["The moon","#1e3cab", "#0c2b36", "#dcdaee", "#b69264", "#5d0056"]]
-palettes =
+
+cookies format =
+	[ 'date',
+	['An old farm close to a little pound', 
 	[[' #FFC0CB', ' Pink', ' Joy', ' A feeling of happiness and excitement'], 
 	[' #F5F5DC', ' Beige', ' Calm', ' A feeling of peace and relaxation'], 
 	[' #FFFACD', ' Lemon Chiffon', ' Playfulness', ' A feeling of fun and amusement'], 
 	[' #ADD8E6', ' Light Blue', ' Creativity', ' A feeling of imagination and inventiveness'], 
+	[' #E0FFFF', ' Light Cyan', ' Freedom', ' A feeling of liberation and independence']]],
+	
+	['The desert of Sahara', 
+	[[' #007a7a', ' Pink', ' Joy', ' A feeling of happiness and excitement'], 
+	[' #f1d153', ' Beige', ' Calm', ' A feeling of peace and relaxation'], 
+	[' #8d0703', ' Lemon Chiffon', ' Playfulness', ' A feeling of fun and amusement'], 
+	[' #00ae00', ' Light Blue', ' Creativity', ' A feeling of imagination and inventiveness'], 
+	[' #efaa06', ' Light Cyan', ' Freedom', ' A feeling of liberation and independence']]],
+
+	['The moon', 
+	[' #1e3cab', ' Pink', ' Joy', ' A feeling of happiness and excitement'], 
+	[' #0c2b36', ' Beige', ' Calm', ' A feeling of peace and relaxation'], 
+	[' #dcdaee', ' Lemon Chiffon', ' Playfulness', ' A feeling of fun and amusement'], 
+	[' #b69264', ' Light Blue', ' Creativity', ' A feeling of imagination and inventiveness'], 
+	[' #5d0056', ' Light Cyan', ' Freedom', ' A feeling of liberation and independence']],
+
+	]
+
+colorsFormat = ['general prompt', [' #FFC0CB', ' Pink', ' Joy', ' A feeling of happiness and excitement'], +\
+	[' #F5F5DC', ' Beige', ' Calm', ' A feeling of peace and relaxation'], +\
+	[' #FFFACD', ' Lemon Chiffon', ' Playfulness', ' A feeling of fun and amusement'],  +\
+	[' #ADD8E6', ' Light Blue', ' Creativity', ' A feeling of imagination and inventiveness'],  +\
 	[' #E0FFFF', ' Light Cyan', ' Freedom', ' A feeling of liberation and independence']]
 """
