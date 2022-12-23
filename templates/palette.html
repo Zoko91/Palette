@@ -1,130 +1,21 @@
 {% extends 'layout.html' %} {% block body %}
 <div class="container jumbotron text-center" id="palette">
   <h1><strong>{{colors[0]}}</strong></h1>
-  {% with listColors = colors %} {% include 'includes/_colors.html' %}{% endwith
-  %}
+{% with listColors = colors[1] %} {% include 'includes/_colors.html' %}{% endwith %}
 
 <br><br><br>
 
 
 <button class="Dark">Dark</button>
-<style>
-.Dark {
-    border: 2px solid Dark;
-    background-color: transparent;
-    padding: 12px 18px;
-    font-size: 16px;
-    cursor: pointer;
-    display: inline-block;
-    border-radius: 30px;
-    transition-duration: 0.3s;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  }
-.Dark:hover {
-    background-color: black;
-    color: white;
-}
-</style>
-
 <button class="Light">Light</button>
-<style>
-.Light {
-    border: 2px solid white;
-    background-color: transparent;
-    padding: 12px 18px;
-    font-size: 16px;
-    cursor: pointer;
-    display: inline-block;
-    border-radius: 30px;
-    transition-duration: 0.3s;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  }
-.Light:hover {
-    background-color: white;
-    color: black;
-}
-</style>
-
 <button class="Pastel">Pastel</button>
-<style>
-.Pastel {
-    border: 2px solid #c982e8;
-    background-color: transparent;
-    padding: 12px 16px;
-    font-size: 16px;
-    cursor: pointer;
-    display: inline-block;
-    border-radius: 30px;
-    transition-duration: 0.3s;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  }
-.Pastel:hover {
-    background-color: #c982e8;
-    color: white;
-}
-</style>
-
 <button class="Warm">Warm</button>
-<style>
-.Warm {
-    border: 2px solid #ea3636;
-    background-color: transparent;
-    padding: 12px 16px;
-    font-size: 16px;
-    cursor: pointer;
-    display: inline-block;
-    border-radius: 30px;
-    transition-duration: 0.3s;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  }
-.Warm:hover {
-    background-color: #ea3636;
-    color: white;
-}
-</style>
-
 <button class="Cold">Cold</button>
-<style>
-.Cold {
-    border: 2px solid #3480e3;
-    background-color: transparent;
-    padding: 12px 19px;
-    font-size: 16px;
-    cursor: pointer;
-    display: inline-block;
-    border-radius: 30px;
-    transition-duration: 0.3s;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  }
-.Cold:hover {
-    background-color: #3480e3;
-    color: white;
-}
-</style>
 
 <br><br><br>
-
 <button class="Retry">RETRY</button>
-<style>
-.Retry {
-    background: black;
-    border: 2px solid transparent;
-    color: white;
-    padding: 12px 18px;
-    font-size: 16px;
-    cursor: pointer;
-    display: inline-block;
-    border-radius: 30px;
-    transition-duration: 0.5s;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    color: white;
-}
-.Retry:hover {
-    border: 2px solid black;
-    background: linear-gradient(to right, red, yellow) border-box;
-    color : black;
-}
-</style>
+
+
 
 </div>
 {% endblock %}

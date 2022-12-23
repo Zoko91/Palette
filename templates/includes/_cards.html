@@ -1,29 +1,22 @@
-{% block body %}
+{% block body %} {% with colorHexa = colorInfo[0] , colorName = colorInfo[1],
+colorEmotion = colorInfo[2], colorText = colorInfo[3] %}
 <div class="container-card">
-  <div
-    class="card-color"
-    id="card-{{cardNum}}"
-    card-color="{{colorName}}">
+  <div class="card-color" id="card-{{cardNum}}" card-color="{{colorHexa}}">
     <div class="back">
       <div class="back-info">
-        <p>
-          Royal red is an elegant color that brings a trustful relation between
-          humans
-        </p>
+        <p>{{colorText}}</p>
       </div>
-      <div class="back-copy-confirm">
-        Copied to clipboard !
-      </div>
+      <div class="back-copy-confirm">Copied to clipboard !</div>
       <div class="back-copy">
         <img
           src="{{
           url_for('static',filename='images/copy.png') }}"
           alt="Copy"
-          />
+        />
       </div>
-      <div class="back-color">{{colorName}}</div>
+      <div class="back-color">{{colorHexa}}</div>
     </div>
     <div class="front"></div>
   </div>
 </div>
-{% endblock %}
+{% endwith %} {% endblock %}
