@@ -111,8 +111,8 @@
   top: 61%;
 }
 
-.back-copy img {
-  transform: scale(0.67);
+.back-copy svg {
+  transform: scale(0.4) translate(-28%, -47%);
 }
 
 .back-copy-confirm {

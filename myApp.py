@@ -20,9 +20,14 @@ def palette():
 		else:
 			colors = [prompt]
 			colors.append(getPalette())
+
+			L = get_luminance(colors[1]) # TEST ICI
+			contrasts = find_contrasts(L)
+
+
 			palettes, expire_date = setCookies()
 			palettes.append(colors)
-			res = make_response(render_template('palette.html', colors=colors, prompt=request.form['prompt']))
+			res = make_response(render_template('palette.html', colors=colors, prompt=request.form['prompt'],contrasts=contrasts))  # ENLEVER LUMI SI MARCHE PAS
 			res.set_cookie('palettes', json.dumps(palettes, indent=2), expires=expire_date)
 	else :
 		res = make_response(redirect(url_for('index')))
@@ -47,7 +52,8 @@ def contact():
 
 def getPalette():
 	return [[' #FFC0CB', ' Pink', ' Joy', ' A feeling of happiness and excitement'],
-	[' #F5F5DC', ' Beige', ' Calm', ' A feeling of peace and relaxation'],
+	# [' #F5F5DC', ' Beige', ' Calm', ' A feeling of peace and relaxation'],
+	[' #000', ' Beige', ' Calm', ' A feeling of peace and relaxation'],
 	[' #FFFACD', ' Lemon Chiffon', ' Playfulness', ' A feeling of fun and amusement'],
 	[' #ADD8E6', ' Light Blue', ' Creativity', ' A feeling of imagination and inventiveness'],
 	[' #E0FFFF', ' Light Cyan', ' Freedom', ' A feeling of liberation and independence']]
@@ -65,6 +71,54 @@ def setCookies():
 		palettes.append(expire_date.strftime("%m/%d/%Y"))
 
 	return palettes, expire_date
+
+def get_luminance(colors):
+	L = []
+	for color in colors:
+		R_sRGB,G_sRGB,B_sRGB = hex_to_rgb(color[0])
+		R_sRGB,G_sRGB,B_sRGB = R_sRGB/255, G_sRGB/255, B_sRGB/255
+
+		# if RsRGB <= 0.03928 then R = RsRGB/12.92 else R = ((RsRGB+0.055)/1.055) ^ 2.4
+		# if GsRGB <= 0.03928 then G = GsRGB/12.92 else G = ((GsRGB+0.055)/1.055) ^ 2.4
+		# if BsRGB <= 0.03928 then B = BsRGB/12.92 else B = ((BsRGB+0.055)/1.055) ^ 2.4
+
+		if R_sRGB <= 0.3928:
+			R = R_sRGB/12.92
+			G = ((G_sRGB+0.055)/1.055) ** 2.4
+			B = ((B_sRGB+0.055)/1.055) ** 2.4
+		elif G_sRGB <= 0.03928 : 
+			R = ((R_sRGB+0.055)/1.055) ** 2.4
+			G = G_sRGB/12.92
+			B = ((B_sRGB+0.055)/1.055) ** 2.4
+		elif B_sRGB <= 0.03928 : 
+			R = ((R_sRGB+0.055)/1.055) ** 2.4
+			G = ((G_sRGB+0.055)/1.055) ** 2.4
+			B = B_sRGB/12.92
+		else : 
+			R = ((R_sRGB+0.055)/1.055) ** 2.4
+			G = ((G_sRGB+0.055)/1.055) ** 2.4
+			B = ((B_sRGB+0.055)/1.055) ** 2.4
+
+		L.append(0.2126 * R + 0.7152 * G + 0.0722 * B)
+	return L
+
+
+def find_contrasts(L):
+	contrasts = []
+	for luminance in L:
+		if luminance <= 0.18 :
+			contrasts.append('#fff')
+		else:
+			contrasts.append('#000')
+	return contrasts
+
+
+def hex_to_rgb(value):
+    value = value.lstrip(' #')
+    lv = len(value)
+    return tuple(int(value[i:i+lv//3], 16) for i in range(0, lv, lv//3))
+
+
 
 """
 

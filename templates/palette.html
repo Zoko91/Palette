@@ -1,19 +1,20 @@
 {% extends 'layout.html' %} {% block body %}
 <div class="container jumbotron text-center" id="palette">
   <h1><strong>{{colors[0]}}</strong></h1>
-{% with listColors = colors[1] %} {% include 'includes/_colors.html' %}{% endwith %}
+  {% with listColors = colors[1] %} {% include 'includes/_colors.html' %}{%
+  endwith %}
 
-<br><br><br>
+  <br><br><br>
 
 
-<button class="Dark">Dark</button>
-<button class="Light">Light</button>
-<button class="Pastel">Pastel</button>
-<button class="Warm">Warm</button>
-<button class="Cold">Cold</button>
+  <button class="Dark">Dark</button>
+  <button class="Light">Light</button>
+  <button class="Pastel">Pastel</button>
+  <button class="Warm">Warm</button>
+  <button class="Cold">Cold</button>
 
-<br><br><br>
-<button class="Retry">RETRY</button>
+  <br><br><br>
+  <button class="Retry">RETRY</button>
 
 
 
