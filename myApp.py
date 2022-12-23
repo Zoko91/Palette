@@ -3,13 +3,14 @@ import json
 import datetime
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'dc71333b4e6fa696b1d85a0c9325cb6937b9f7701242030b'
 
 @app.route("/")
 def index():
 	current_page = "home"
 	return render_template('home.html', current_page = current_page)
 
-@app.route('/palette')  
+@app.route('/palette', methods=['GET', 'POST'])  
 def palette():
 	colors = getPalette()
 	palettes = []
@@ -22,10 +23,17 @@ def palette():
 		expire_date = datetime.datetime.now()
 		expire_date = expire_date + datetime.timedelta(days=30)
 		palettes.append(expire_date.strftime("%m/%d/%Y"))
-		
-	palettes.append(colors)
-	res = make_response(render_template('palette.html', colors=colors))
-	res.set_cookie('palettes', json.dumps(palettes, indent=2), expires=expire_date)
+
+	if request.method == 'POST':
+		prompt = request.form['prompt']
+		if not prompt:
+			flash('Prompt is required!')
+			return redirect(url_for('index'))
+		else:
+			# return redirect(url_for('index'))
+			palettes.append(colors)
+			res = make_response(render_template('palette.html', colors=colors, prompt=request.form['prompt']))
+			res.set_cookie('palettes', json.dumps(palettes, indent=2), expires=expire_date)
 	
 	return res
 
