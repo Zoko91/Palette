@@ -1,6 +1,8 @@
 {% extends 'layout.html' %} {% block body %}
-<div class="container jumbotron text-center" id="palette">
-  <h1><strong>{{colors[0]}}</strong></h1>
+
+<h1 class="enjoy bg-transparent">Enjoy your palette</h1>
+<div class="container jumbotron text-center" id="palette" style="padding: 0;">
+  <h2>"{{colors[0]}}"</h2>
   {% with listColors = colors[1] %} {% include 'includes/_colors.html' %}{%
   endwith %}
 

@@ -181,3 +181,10 @@ br::selection {
   border-radius: 15px;
   box-shadow: 0px 0px 10px black;
 }
+
+.enjoy {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-block: 3vh;
+}

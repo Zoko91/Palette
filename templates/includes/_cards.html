@@ -6,7 +6,12 @@ colorEmotion = colorInfo[2], colorText = colorInfo[3] %}
   <div class="card-color" id="card-{{cardNum}}" card-color="{{colorHexa}}">
     <div class="back">
       <div class="back-info">
-        <p>{{colorText}}</p>
+        <div>
+          <h4>{{colorEmotion}}</h4>
+        </div>
+        <div>
+          <p>{{colorText}}</p>
+        </div>
       </div>
       <div class="back-copy-confirm" style="color:{{contrast_color}}">Copied to
         clipboard !</div>

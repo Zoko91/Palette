@@ -83,13 +83,29 @@
 
 .back-info {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
   align-items: center;
 
   height: 70%;
   background-color: white;
   border-radius: 25px 25px 0px 0px;
   padding-inline: 8%;
+}
+
+.back-info h4 {
+  margin-top: 2vh;
+}
+
+.back-info div:nth-child(1) {
+  height: 30%;
+}
+
+.back-info div:nth-child(2) {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .back-color {
