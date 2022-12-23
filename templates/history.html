@@ -4,9 +4,17 @@
   <h1><strong>HERE IS YOUR PALETTE HISTORY</strong></h1>
   {% if palettes|length == 0 %}
   <p>The history is empty</p>
-  {% else %} {% for i in range(0,palettes|length)%} {% with listColors =
-  palettes[i] %}
-  <p><strong>{{listColors[0]}}</strong></p>
-  {% include 'includes/_colors.html' %} {% endwith %} {%endfor%} {% endif %}
+  {% else %}
+  <div class="wrapper-history">
+    <div class="carousel-history">
+      {% for i in range(0,palettes|length)%} {% with listColors = palettes[i] %}
+      <div class="carousel-history__item">
+        <p><strong>{{listColors[0]}}</strong></p>
+        {% include 'includes/_colors.html' %}
+      </div>
+      {% endwith %} {%endfor%}
+    </div>
+  </div>
+  {% endif %}
 </div>
 {% endblock %}

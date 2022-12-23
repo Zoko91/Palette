@@ -47,10 +47,16 @@ def contact():
 	return render_template('contact.html', current_page = current_page)
 
 def getPalette():
-	return ["The moon","#1e3cab", "#0c2b36", "#dcdaee", "#b69264", "#5d0056"]
+	return palettes = [[' #FFC0CB', ' Pink', ' Joy', ' A feeling of happiness and excitement'], [' #F5F5DC', ' Beige', ' Calm', ' A feeling of peace and relaxation'], [' #FFFACD', ' Lemon Chiffon', ' Playfulness', ' A feeling of fun and amusement'], [' #ADD8E6', ' Light Blue', ' Creativity', ' A feeling of imagination and inventiveness'], [' #E0FFFF', ' Light Cyan', ' Freedom', ' A feeling of liberation and independence']]
 
 """
 colors = [["An old farm close to a little pound","#eea23f", "#9365c1", "#6ac941", "#e95dcf", "#438ccc"],
 	["The desert of Sahara","#007a7a", "#f1d153", "#8d0703", "#00ae00", "#efaa06"],
 	["The moon","#1e3cab", "#0c2b36", "#dcdaee", "#b69264", "#5d0056"]]
+palettes =
+	[[' #FFC0CB', ' Pink', ' Joy', ' A feeling of happiness and excitement'], 
+	[' #F5F5DC', ' Beige', ' Calm', ' A feeling of peace and relaxation'], 
+	[' #FFFACD', ' Lemon Chiffon', ' Playfulness', ' A feeling of fun and amusement'], 
+	[' #ADD8E6', ' Light Blue', ' Creativity', ' A feeling of imagination and inventiveness'], 
+	[' #E0FFFF', ' Light Cyan', ' Freedom', ' A feeling of liberation and independence']]
 """
