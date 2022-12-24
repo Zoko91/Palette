@@ -82,6 +82,23 @@ function warmCards(){ // low saturation for pastels
     }
   })
 }
+function coldCards(){ // low saturation for pastels
+  let cold = document.getElementsByClassName("Warm")[0];
+  cold.addEventListener('click', () => {
+    let cards = document.getElementsByClassName("card-color");
+    for (let card of cards) {
+      let {hue,saturation,luminance} = getHSL(card);
+
+      if(hue <= 270 && hue >=90){
+        // A FAIRE CE N'EST PAS FAIT
+        hue = (270+(270-hue))%360; // symétrie par rapport à l'axe horizontal
+      }
+
+      let frontCard = card.querySelector(".front");
+      frontCard.style.backgroundColor = `hsl(${hue},${saturation}%,${luminance}%)`;
+    }
+  })
+}
 
 function getHSL(card){
   let hexCode = card.getAttribute("card-color"); // donne l'hexadécimal de la carte
@@ -153,9 +170,6 @@ if (page == "palette" || page == "history") {
   lightenCards();
   pastelizeCards();
   warmCards();
-
-
-
-
+  coldCards();
 }
 
