@@ -18,7 +18,7 @@
 		Enjoy our experience ! </p>
 
 	<form class="form-input" action="palette" method="post">
-		<input class="input-prompt" type="text" name="prompt" id="input" placeholder="Write a sentence ..." value="{{ request.form['prompt'] }}" required></input>
+		<input class="input-prompt" type="text" name="prompt" id="input" placeholder="Write a sentence ..." value="{{ request.form['prompt'] }}" maxlength="150" required></input>
 		<button type="submit" id="btn-continue">
 			<img src="{{ url_for('static',filename='images/next.png') }}" alt="Continue">
 		</button>

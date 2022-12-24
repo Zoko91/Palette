@@ -27,8 +27,7 @@ body::-webkit-scrollbar {
   /* for Chrome, Safari, and Opera */
 }
 
-#palette {
-}
+#palette {}
 
 #home {
   transform: translateY(15%);
@@ -107,12 +106,10 @@ br::selection {
 }
 
 .bg-transparent {
-  background: linear-gradient(
-    16deg,
-    rgba(255, 0, 0, 1) 24%,
-    rgba(0, 0, 255, 1) 50%,
-    rgba(0, 255, 0, 1) 80%
-  );
+  background: linear-gradient(16deg,
+      rgba(255, 0, 0, 1) 24%,
+      rgba(0, 0, 255, 1) 50%,
+      rgba(0, 255, 0, 1) 80%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: black;
@@ -121,12 +118,10 @@ br::selection {
 .bg-transparent::-moz-selection {
   /* color: ; */
   background-color: transparent;
-  background: linear-gradient(
-    16deg,
-    rgba(255, 0, 0, 1) 24%,
-    rgba(0, 0, 255, 1) 50%,
-    rgba(0, 255, 0, 1) 80%
-  );
+  background: linear-gradient(16deg,
+      rgba(255, 0, 0, 1) 24%,
+      rgba(0, 0, 255, 1) 50%,
+      rgba(0, 255, 0, 1) 80%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -135,12 +130,10 @@ br::selection {
 .bg-transparent::selection {
   /* color: linear-gradient(16deg, rgba(255, 0, 0, 1) 24%, rgba(0, 0, 255, 1) 50%, rgba(0, 255, 0, 1) 80%); */
   background-color: transparent;
-  background: linear-gradient(
-    16deg,
-    rgba(255, 0, 0, 1) 24%,
-    rgba(0, 0, 255, 1) 50%,
-    rgba(0, 255, 0, 1) 80%
-  );
+  background: linear-gradient(16deg,
+      rgba(255, 0, 0, 1) 24%,
+      rgba(0, 0, 255, 1) 50%,
+      rgba(0, 255, 0, 1) 80%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -175,7 +168,7 @@ br::selection {
   top: 11vh;
 }
 
-.alert > span {
+.alert>span {
   background-color: #c30202;
   width: 35%;
   height: 88%;
