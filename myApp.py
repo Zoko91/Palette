@@ -1,6 +1,7 @@
 from flask import *
 import json
 import datetime
+import openai
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'dc71333b4e6fa696b1d85a0c9325cb6937b9f7701242030b'
@@ -19,9 +20,8 @@ def palette():
 			res = make_response(redirect(url_for('index')))
 		else:
 			colors = [prompt]
-			colors.append(getPalette())
-
-			L = get_luminance(colors[1]) # TEST ICI
+			colors.append(getpalette(prompt))
+			L = get_luminance(colors[1])  # TEST ICI
 			contrasts = find_contrasts(L)
 
 
@@ -50,13 +50,32 @@ def contact():
 	current_page = "contact"
 	return render_template('contact.html', current_page = current_page)
 
-def getPalette():
-	return [[' #FFC0CB', ' Pink', ' Joy', ' A feeling of happiness and excitement'],
-	# [' #F5F5DC', ' Beige', ' Calm', ' A feeling of peace and relaxation'],
-	[' #000', ' Beige', ' Calm', ' A feeling of peace and relaxation'],
-	[' #FFFACD', ' Lemon Chiffon', ' Playfulness', ' A feeling of fun and amusement'],
-	[' #ADD8E6', ' Light Blue', ' Creativity', ' A feeling of imagination and inventiveness'],
-	[' #E0FFFF', ' Light Cyan', ' Freedom', ' A feeling of liberation and independence']]
+
+def getpalette(prompt_text):
+	# input_text is the one given to openAi
+	input_text = 'Elaborate a palette of 5 colors based on the sentiment analysis of this prompt: ' + prompt_text + ' Write the answer as followed: "hexadecimal value$name of the color$sentiment the color is based on$detailed and contextualized description of the sentiment."'
+	# connection to the openAI API using Joseph's credentials
+	openai.api_key = "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"
+	response = openai.Completion.create(model="text-davinci-003",
+										prompt=input_text,
+										temperature=0.5,
+										max_tokens=500)  # we define a maximum of 0.01$ per input
+
+	# If response is null then modify the code to return NotFound or problem....
+
+
+	# collecting the answer and selecting the important informations out of it
+	vals = response["choices"][0]["text"].split('.')
+	colors = []
+	if len(vals) == 6 or vals[-1] == '':
+		vals.pop()
+	for i in range(5):
+		# colors is a list of 5 list of 1. color 2. color name 3. sentiment 4. sentiment analysis
+		colors.append(vals[i].split('$'))
+	for inner in colors:
+		for i in range(len(inner)):
+			inner[i] = inner[i].replace('\n', '')
+	return colors
 
 def setCookies():
 	palettes = []
@@ -152,4 +171,4 @@ colorsFormat = ['general prompt', [' #FFC0CB', ' Pink', ' Joy', ' A feeling of h
 	[' #FFFACD', ' Lemon Chiffon', ' Playfulness', ' A feeling of fun and amusement'],  +\
 	[' #ADD8E6', ' Light Blue', ' Creativity', ' A feeling of imagination and inventiveness'],  +\
 	[' #E0FFFF', ' Light Cyan', ' Freedom', ' A feeling of liberation and independence']]
-"""
+	"""
