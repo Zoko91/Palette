@@ -1,3 +1,6 @@
+var path = window.location.pathname;
+var page = path.split("/").pop();
+
 function flipCard(element) {
   element.classList.toggle("flipped");
 }
@@ -14,17 +17,22 @@ function setColors() {
   }
 }
 
-var path = window.location.pathname;
-var page = path.split("/").pop();
-if (page == "palette" || page == "history") {
-  setColors();
-  clampBackText();
-}
 function clampBackText(){
   let cards = document.getElementsByClassName("card-color");
   for (let card of cards) {
     let backText = card.querySelector(".card-color-text");
-    $clamp(backText, {clamp: 3, useNativeClamp: false});
+    $clamp(backText, {clamp: 5, useNativeClamp: false});
     // $clamp(paragraph, {clamp: 1, useNativeClamp: false, animate: true});
   }
 }
+
+
+if (page == "palette" || page == "history") {
+  setColors();
+  clampBackText();
+  let retryButton = document.getElementsByClassName("Retry")[0];
+  retryButton.addEventListener('click', ()=>{
+    window.location.reload();
+  })
+}
+

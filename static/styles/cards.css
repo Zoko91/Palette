@@ -149,3 +149,7 @@
 .fade-out {
   animation: fadeOut 2s;
 }
+
+.card-color-text{
+  line-height: normal;
+}
