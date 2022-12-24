@@ -53,12 +53,12 @@ def contact():
 
 def getpalette(prompt_text):
 	# input_text is the one given to openAi
-	input_text = 'Elaborate a palette of 5 colors based on the sentiment analysis of this prompt: ' + prompt_text + ' Write the answer as followed: "hexadecimal value$Name of the color$The sentiment the color is based on$Detailed and contextualized description of the sentiment."'
+	input_text = 'Elaborate a palette of 5 colors based on the sentiment analysis of this prompt: ' + prompt_text + ' Write the answer as followed: "hexadecimal value$Name of the color$One sentiment the color is based on$Detailed and contextualized description of the sentiment."'
 	# connection to the openAI API using Joseph's credentials
 	openai.api_key = "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"
 	response = openai.Completion.create(model="text-davinci-003",
 										prompt=input_text,
-										temperature=0.5,
+										temperature=0.2,
 										max_tokens=500)  # we define a maximum of 0.01$ per input
 
 	# If response is null then modify the code to return NotFound or problem....
