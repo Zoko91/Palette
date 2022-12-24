@@ -27,9 +27,70 @@ function clampBackText(){
 }
 
 function darkenCards(){
+  let dark = document.getElementsByClassName("Dark")[0];
+  dark.addEventListener('click', () => {
+    let cards = document.getElementsByClassName("card-color");
+    for (let card of cards) {
+      let {hue,saturation,luminance} = getHSL(card);
 
+      let frontCard = card.querySelector(".front");
+
+      frontCard.style.backgroundColor = `hsl(${hue},${saturation}%,${22}%)`;
+    }
+  })
+}
+function lightenCards(){
+  let light = document.getElementsByClassName("Light")[0];
+  light.addEventListener('click', () => {
+    let cards = document.getElementsByClassName("card-color");
+    for (let card of cards) {
+
+      let {hue,saturation,luminance} = getHSL(card);
+
+      let frontCard = card.querySelector(".front");
+      frontCard.style.backgroundColor = `hsl(${hue},${saturation}%,${74}%)`;
+    }
+  })
+}
+function pastelizeCards(){ // low saturation for pastels
+  let pastel = document.getElementsByClassName("Pastel")[0];
+  pastel.addEventListener('click', () => {
+    let cards = document.getElementsByClassName("card-color");
+    for (let card of cards) {
+
+      let {hue,saturation,luminance} = getHSL(card);
+      saturation = getRandomInt(35, 68);
+      let frontCard = card.querySelector(".front");
+      frontCard.style.backgroundColor = `hsl(${hue},${saturation}%,${65}%)`;
+    }
+  })
+}
+function warmCards(){ // low saturation for pastels
+  let warm = document.getElementsByClassName("Warm")[0];
+  warm.addEventListener('click', () => {
+    let cards = document.getElementsByClassName("card-color");
+    for (let card of cards) {
+      let {hue,saturation,luminance} = getHSL(card);
+
+      if(hue <= 270 && hue >=90){
+        // hue = (hue + 180)%360; // symétrie par rapport au centre
+        hue = (270+(270-hue))%360; // symétrie par rapport à l'axe horizontal
+      }
+
+      let frontCard = card.querySelector(".front");
+      frontCard.style.backgroundColor = `hsl(${hue},${saturation}%,${luminance}%)`;
+    }
+  })
 }
 
+function getHSL(card){
+  let hexCode = card.getAttribute("card-color"); // donne l'hexadécimal de la carte
+
+  let {r,g,b} = hexToRGB(hexCode);
+
+  let {hue,saturation,luminance} = RGBToHSL(r,g,b);
+  return {hue,saturation,luminance};
+}
 function hexToRGB(hexCode){
   let hexNumbers = hexCode.slice(1);
   let r = parseInt(hexNumbers.slice(0,2),16);
@@ -75,7 +136,11 @@ function RGBToHSL(r,g,b){
   return {hue,saturation,luminance};
 
 }
-
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+}
 
 if (page == "palette" || page == "history") {
   setColors();
@@ -84,21 +149,13 @@ if (page == "palette" || page == "history") {
   retryButton.addEventListener('click', ()=>{
     window.location.reload();
   })
+  darkenCards();
+  lightenCards();
+  pastelizeCards();
+  warmCards();
 
-  let dark = document.getElementsByClassName("Dark")[0];
-  dark.addEventListener('click', () => {
-    let cards = document.getElementsByClassName("card-color");
-    for (let card of cards) {
-      let hexCode = card.getAttribute("card-color"); // donne l'hexadécimal de la carte
 
-      let {r,g,b} = hexToRGB(hexCode);
 
-      let {hue,saturation,luminance} = RGBToHSL(r,g,b);
-      let frontCard = card.querySelector(".front");
 
-      frontCard.style.backgroundColor = `hsl(${hue},${saturation}%,${22}%)`;
-    }
-
-  })
 }
 
