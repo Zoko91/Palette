@@ -18,4 +18,13 @@ var path = window.location.pathname;
 var page = path.split("/").pop();
 if (page == "palette" || page == "history") {
   setColors();
+  clampBackText();
+}
+function clampBackText(){
+  let cards = document.getElementsByClassName("card-color");
+  for (let card of cards) {
+    let backText = card.querySelector(".card-color-text");
+    $clamp(backText, {clamp: 3, useNativeClamp: false});
+    // $clamp(paragraph, {clamp: 1, useNativeClamp: false, animate: true});
+  }
 }

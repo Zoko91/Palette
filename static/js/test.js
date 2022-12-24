@@ -17,6 +17,8 @@ if (page != "palette" && page != "history") {
 
 
 
+
+
 function loop(colors) {
     sweep(colors, ['color'], '#df2f20', '#da255a', {
         callback: loop,
