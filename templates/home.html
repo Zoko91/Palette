@@ -13,12 +13,13 @@
             #42FF00	100 %
             #001AFF 100 %
             #FF00F5 100 %
-            #FF0D0D 100 % -->
+            #FF0D0D 100 %
+        -->
 		<p class="font-italic bg-transparent palette-pres ">Palette is a tool for
 			generating a palette of 5 colors related to the text of your choice. <br>
 			Enjoy our experience ! </p>
 
-		<form class="form-input" action="palette" method="post">
+		<form class="form-input" action="palette" method="post" onsubmit="displayLoader()">
 			<input class="input-prompt" type="text" name="prompt" id="input" placeholder="Write a sentence ..." value="{{ request.form['prompt'] }}" maxlength="150" required>
 			<button type="submit" id="btn-continue">
 				<img src="{{ url_for('static',filename='images/next.png') }}" alt="Continue">
