@@ -15,6 +15,7 @@ def index():
 
 @app.route('/palette', methods=['GET', 'POST'])
 def palette():
+
     if request.method == 'POST':
         prompt = request.form['prompt']
         if not prompt:
@@ -28,8 +29,7 @@ def palette():
 
             palettes, expire_date = setCookies()
             palettes.append(colors)
-            res = make_response(render_template('palette.html', colors=colors, prompt=request.form['prompt'],
-                                                contrasts=contrasts))  # ENLEVER LUMI SI MARCHE PAS
+            res = make_response(render_template('palette.html', colors=colors, prompt=request.form['prompt'], contrasts=contrasts))  # ENLEVER LUMI SI MARCHE PAS
             res.set_cookie('palettes', json.dumps(palettes, indent=2), expires=expire_date)
     else:
         res = make_response(redirect(url_for('index')))
