@@ -1,6 +1,11 @@
 .team-members {
 	transform: rotate(-45deg);
 }
+
+ul{
+	list-style-type: none;
+}
+
 .team-members li > div {
 	float: left;
 	width: 20%;
@@ -75,7 +80,7 @@
 }
 
 /* hover content - onhover */
-.member-details *,
+.member-details > div, 
 .member-details > div:after {
 	cursor: pointer;
 	transition: all .4s ease;
@@ -176,40 +181,3 @@
 	}
 }
 
-/* extra */
-.copyright {
-	text-align: center;
-	margin-top: 30px;
-	font-size: 1.6rem;
-	background-color: #ededed;
-}
-.copyright a {
-	display: inline-block;
-	padding: 15px 2px;
-}
-.copyright a:not(:last-child):after {
-	content: "/";
-	margin-left: 10px;
-}
-
-.toptal {
-	color: #204ecf;
-}
-
-.upstack {
-	color: #008bf7;
-}
-
-.upwork {
-	color: #37a000;
-}
-
-.fiverr {
-	color: #1dbf73;
-}
-
-.jobs {
-	color: magenta;
-	text-decoration: underline;
-	margin-top: -15px;
-}
