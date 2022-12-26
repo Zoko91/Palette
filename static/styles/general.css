@@ -94,7 +94,7 @@ br::selection {
   margin-top: 10vh;
   width: 70%;
   border-radius: 25px;
-  border: 2px solid black;
+  border: 1px solid black;
   padding-left: 2%;
   padding-block: 0.3%;
   padding-right: 3.5em;
@@ -181,3 +181,23 @@ br::selection {
   border-radius: 15px;
   box-shadow: 0px 0px 10px black;
 }
+/* Animation transition entre pages */
+.transition-fade{
+  opacity: 1;
+  transition: 500ms;
+  transform: translateY(0);
+}
+.transition-fade form{
+  transform: translateY(0);
+  transition: 500ms;
+}
+
+
+html.is-animating .transition-fade{
+  opacity: 0;
+}
+
+html.is-animating form{
+  transform: translateY(100px);
+}
+
