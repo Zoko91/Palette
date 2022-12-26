@@ -2,6 +2,20 @@
  * Loader by  Bojan Krsmanovic
  * https://codepen.io/bojankrsmanovic/pen/dpzeZm
 */
+@keyframes yourAnimation{
+    0% {
+    }
+    50% {
+        transform:  rotate(180deg);
+    }
+    100% {
+        transform:  rotate(360deg);
+    }
+}
+#logo-palette-loader{
+    animation: yourAnimation 5s linear 0s infinite normal none;
+}
+
 
 *,
 *:before,
@@ -10,16 +24,18 @@
   margin: 0;
   padding: 0;
 }
+
 #loader-wrapper.display{
     display: block;
 }
+
 #loader-wrapper{
-    display: none;
     width: 100vw;
     height: 100vh;
     background-color: #EFECEA;
     position: absolute;
     top: 0;
+    display: none;
 }
 .wrapper {
   position: absolute;

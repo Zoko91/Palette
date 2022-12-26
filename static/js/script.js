@@ -4,6 +4,7 @@ let swup = new Swup();
 // run once
 init();
 
+
 // this event runs for every page view after initial load
 swup.on('contentReplaced', ()=> {
     let activeNavBtn = document.querySelector('.active');
@@ -15,8 +16,6 @@ swup.on('contentReplaced', ()=> {
 function init() {
     const path = window.location.pathname;
     let page = path.split("/").pop();
-    // console.log(page);
-
     function flipCard(element) {
         element.classList.toggle("flipped");
     }
@@ -211,8 +210,6 @@ function init() {
         if (hue < 0) {
             hue += 360;
         }
-
-
         return {hue, saturation, luminance};
 
     }
@@ -235,6 +232,16 @@ function init() {
         pastelizeCards();
         warmCards();
         coldCards();
+        // window.addEventListener('load',
+        //     function() {
+        //         setTimeout(()=>{
+        //             const loader = document.getElementById('loader-wrapper');
+        //             loader.classList.add('fade-out');
+        //             setTimeout(()=>{
+        //                 loader.classList.remove('display');
+        //             },2000)
+        //         },1000)
+        //     }, false);
     }
 
     if (page != "palette" && page != "history") {
@@ -250,8 +257,6 @@ function init() {
         let currentPage = document.getElementById(`${page}`);
         currentPage.classList.add("active");
     }
-
-
 
     function loop(colors) {
         sweep(colors, ['color'], '#df2f20', '#da255a', {
@@ -312,6 +317,14 @@ function init() {
             card.classList.toggle("flipped");
         });
     }
+
+    window.addEventListener('load',
+        function() {
+            const loader = document.getElementById('loader-wrapper');
+
+            loader.classList.remove('display');
+        }, false);
+
 }
 
 function displayLoader(){
@@ -319,3 +332,4 @@ function displayLoader(){
     let loader = document.getElementById('loader-wrapper');
     loader.classList.add("display");
 }
+
