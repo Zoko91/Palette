@@ -1,6 +1,5 @@
 .team-members {
 	transform: rotate(-45deg);
-
 }
 .team-members li > div {
 	float: left;
@@ -16,7 +15,7 @@
 }
 
 .member-details > div {
-	background-color: #ddd;
+	background-color: #b3b7ba;
 	margin: 5px;
 }
 .member-details img {
