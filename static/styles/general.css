@@ -82,8 +82,8 @@ br::selection {
 
 #btn-continue {
   position: absolute;
-  right: -2.8em;
-  top: -14.6em;
+  right: -2.5em;
+  top: -14.5em;
   border: 0;
   transform: scale(0.08);
   background: transparent;
@@ -107,9 +107,9 @@ br::selection {
 
 .bg-transparent {
   background: linear-gradient(16deg,
-      rgba(255, 0, 0, 1) 24%,
-      rgba(0, 0, 255, 1) 50%,
-      rgba(0, 255, 0, 1) 80%);
+  rgba(255, 0, 0, 1) 24%,
+  rgba(0, 0, 255, 1) 50%,
+  rgba(0, 255, 0, 1) 80%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: black;
@@ -119,9 +119,9 @@ br::selection {
   /* color: ; */
   background-color: transparent;
   background: linear-gradient(16deg,
-      rgba(255, 0, 0, 1) 24%,
-      rgba(0, 0, 255, 1) 50%,
-      rgba(0, 255, 0, 1) 80%);
+  rgba(255, 0, 0, 1) 24%,
+  rgba(0, 0, 255, 1) 50%,
+  rgba(0, 255, 0, 1) 80%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -131,9 +131,9 @@ br::selection {
   /* color: linear-gradient(16deg, rgba(255, 0, 0, 1) 24%, rgba(0, 0, 255, 1) 50%, rgba(0, 255, 0, 1) 80%); */
   background-color: transparent;
   background: linear-gradient(16deg,
-      rgba(255, 0, 0, 1) 24%,
-      rgba(0, 0, 255, 1) 50%,
-      rgba(0, 255, 0, 1) 80%);
+  rgba(255, 0, 0, 1) 24%,
+  rgba(0, 0, 255, 1) 50%,
+  rgba(0, 255, 0, 1) 80%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

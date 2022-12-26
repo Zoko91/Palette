@@ -11,11 +11,8 @@ swup.on('contentReplaced', ()=> {
     init();
 });
 
-// swup.on('contentReplaced', init);
 
 function init() {
-
-
     const path = window.location.pathname;
     let page = path.split("/").pop();
     // console.log(page);
@@ -53,7 +50,7 @@ function init() {
         let cards = document.getElementsByClassName("card-color");
         for (let card of cards) {
             let backText = card.querySelector(".card-color-text");
-            $clamp(backText, {clamp: 5, useNativeClamp: false});
+            $clamp(backText, {clamp: 6, useNativeClamp: false});
             // $clamp(paragraph, {clamp: 1, useNativeClamp: false, animate: true});
         }
     }
@@ -66,6 +63,7 @@ function init() {
                 let {hue, saturation, luminance} = getHSL(card);
 
                 luminance = 22;
+
                 changeColors(card,hue,saturation,luminance);
             }
         })
@@ -78,7 +76,9 @@ function init() {
             for (let card of cards) {
 
                 let {hue, saturation, luminance} = getHSL(card);
+
                 luminance=74;
+
                 changeColors(card,hue,saturation,luminance);
             }
         })
@@ -251,6 +251,8 @@ function init() {
         currentPage.classList.add("active");
     }
 
+
+
     function loop(colors) {
         sweep(colors, ['color'], '#df2f20', '#da255a', {
             callback: loop,
@@ -310,4 +312,10 @@ function init() {
             card.classList.toggle("flipped");
         });
     }
+}
+
+function displayLoader(){
+    console.log("displayLoader");
+    let loader = document.getElementById('loader-wrapper');
+    loader.classList.add("display");
 }
