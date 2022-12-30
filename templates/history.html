@@ -7,8 +7,8 @@
   {% else %}
   <div>
     <div>
-      {% for i in range(0,palettes|length)%} {% with listColors = palettes[i][1]
-      %}
+      {% for i in range(0,palettes|length)%} {% with listColors =
+      palettes[i][1], contrasts = palettes[i][2] %}
       <p><strong>{{palettes[i][0]}}</strong></p>
       {% include 'includes/_colors.html' %} {% endwith %} {%endfor%}
     </div>

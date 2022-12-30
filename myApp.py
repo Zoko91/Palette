@@ -27,9 +27,11 @@ def palette():
             L = get_luminance(colors[1])  # TEST ICI
             contrasts = find_contrasts(L)
 
+            colors.append(contrasts)
+
             palettes, expire_date = setCookies()
             palettes.append(colors)
-            res = make_response(render_template('palette.html', colors=colors, prompt=request.form['prompt'], contrasts=contrasts, current_page = current_page ))  # ENLEVER LUMI SI MARCHE PAS
+            res = make_response(render_template('palette.html', colors=colors, prompt=prompt, current_page = current_page ))  # ENLEVER LUMI SI MARCHE PAS
             res.set_cookie('palettes', json.dumps(palettes, indent=2), expires=expire_date)
     else:
         res = make_response(redirect(url_for('index')))
