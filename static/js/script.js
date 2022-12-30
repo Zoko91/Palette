@@ -88,10 +88,11 @@ function init() {
         pastel.addEventListener('click', () => {
             let cards = document.getElementsByClassName("card-color");
             for (let card of cards) {
-
                 let {hue, saturation, luminance} = getHSL(card);
+
                 saturation = getRandomInt(35, 68);
-                luminance = 65;
+                luminance = 74;
+
                 changeColors(card,hue,saturation,luminance);
 
             }
