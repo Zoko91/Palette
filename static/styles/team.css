@@ -2,27 +2,28 @@
 	transform: rotate(-45deg);
 }
 
-ul{
+ul {
 	list-style-type: none;
 }
 
-.team-members li > div {
+.team-members li>div {
 	float: left;
 	width: 20%;
 }
 
-.team-members li:nth-child(2) > div:first-child {
+.team-members li:nth-child(2)>div:first-child {
 	margin-left: 20%;
 }
 
-.team-members li:last-child > div:first-child {
+.team-members li:last-child>div:first-child {
 	margin-left: 40%;
 }
 
-.member-details > div {
+.member-details>div {
 	background-color: #b3b7ba;
 	margin: 5px;
 }
+
 .member-details img {
 	transform: rotate(45deg) translate(0, 15px) scale(1.2);
 	display: block;
@@ -31,7 +32,7 @@ ul{
 }
 
 /* hover content - style */
-.member-details > div {
+.member-details>div {
 	position: relative;
 	overflow: hidden;
 }
@@ -61,12 +62,19 @@ ul{
 	font-weight: 400;
 	top: -100px;
 }
+
 .member-info p {
 	font-weight: 300;
 	font-size: 12px;
 	bottom: -150px;
 }
-.member-details > div:after {
+
+#palette-logo-div:after {
+	content: '';
+	background-image: none;
+}
+
+.member-details>div:after {
 	content: '';
 	background-image: linear-gradient(45deg, rgba(228, 82, 69, .8) 50%, transparent 50%);
 	position: absolute;
@@ -80,14 +88,14 @@ ul{
 }
 
 /* hover content - onhover */
-.member-details > div, 
-.member-details > div:after {
+.member-details>div,
+.member-details>div:after {
 	cursor: pointer;
 	transition: all .4s ease;
 }
 
 .member-details:hover *,
-.member-details:hover > div:after {
+.member-details:hover>div:after {
 	opacity: 1;
 	visibility: visible;
 }
@@ -104,6 +112,7 @@ ul{
 .team-overview {
 	padding-right: 15px;
 }
+
 .team-overview h2 {
 	text-transform: uppercase;
 	font-size: 22px;
@@ -111,12 +120,12 @@ ul{
 	margin-bottom: 5px;
 }
 
-.team-overview > a {
+.team-overview>a {
 	margin-bottom: 30px;
 	display: block;
 }
 
-.team-overview > a:before {
+.team-overview>a:before {
 	content: '';
 	width: 10px;
 	height: 2px;
@@ -136,7 +145,7 @@ ul{
 	align-items: center;
 }
 
-.flex-center > div:first-child {
+.flex-center>div:first-child {
 	order: 2;
 }
 
@@ -145,9 +154,11 @@ ul{
 	.sm-no-flex {
 		display: block;
 	}
+
 	.sm-no-float {
 		float: none !important;
 	}
+
 	.sm-text-center {
 		text-align: center;
 	}
@@ -157,27 +168,30 @@ ul{
 	.team-members li {
 		text-align: center;
 	}
-	.team-members li > div {
+
+	.team-members li>div {
 		float: none;
 		display: inline-block;
 		width: 30%;
 		margin: 0 !important;
 	}
+
 	.team-members {
 		transform: rotate(0);
 	}
+
 	.member-details img {
 		transform: rotate(0) translate(0, 0);
 	}
+
 	.team-overview {
 		padding: 15px;
 	}
-	
+
 }
 
 @media only screen and (max-width : 399px) {
-	.team-members li > div {
+	.team-members li>div {
 		width: 48%;
 	}
 }
-

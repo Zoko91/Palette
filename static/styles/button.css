@@ -1,6 +1,7 @@
 .Dark {
   border: 2px solid Dark;
   background-color: transparent;
+  color: black;
   padding: 12px 18px;
   font-size: 16px;
   cursor: pointer;
@@ -102,4 +103,9 @@
   /* background: linear-gradient(to right, red, yellow) border-box; */
   background-color: white;
   color: black;
+}
+
+.selectedButton {
+  background-color: var(--btn-bg-color);
+  color: var(--btn-color);
 }

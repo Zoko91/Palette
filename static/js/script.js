@@ -6,7 +6,7 @@ init();
 
 
 // this event runs for every page view after initial load
-swup.on('contentReplaced', ()=> {
+swup.on('contentReplaced', () => {
     let activeNavBtn = document.querySelector('.active');
     activeNavBtn.classList.remove('active');
     init();
@@ -20,6 +20,9 @@ function init() {
         element.classList.toggle("flipped");
     }
 
+    let buttons = document.getElementsByClassName("btnp");
+    let r = document.querySelector(':root');
+
     function setColors() {
         let cards = document.getElementsByClassName("card-color");
         for (let card of cards) {
@@ -32,16 +35,16 @@ function init() {
         }
     }
 
-    function changeColors(card, hue, saturation, lightness){
+    function changeColors(card, hue, saturation, lightness) {
         let frontCard = card.querySelector(".front");
         let backCard = card.querySelector(".back");
         let backCopy = card.querySelector(".back-copy");
         let backColor = card.querySelector(".back-color");
 
         frontCard.style.backgroundColor = `hsl(${hue},${saturation}%,${lightness}%)`;
-        backCard.style.backgroundColor  = `hsl(${hue},${saturation}%,${lightness}%)`;
-        backCopy.style.backgroundColor  = `hsl(${hue},${saturation}%,${lightness}%)`;
-        let rgb = frontCard.style.backgroundColor.replace("rgb(",'').replace(')','').replace(' ','').replace(' ','').split(',');
+        backCard.style.backgroundColor = `hsl(${hue},${saturation}%,${lightness}%)`;
+        backCopy.style.backgroundColor = `hsl(${hue},${saturation}%,${lightness}%)`;
+        let rgb = frontCard.style.backgroundColor.replace("rgb(", '').replace(')', '').replace(' ', '').replace(' ', '').split(',');
         backColor.innerText = RGBToHex(parseInt(rgb[0]), parseInt(rgb[1]), parseInt(rgb[2]));
     }
 
@@ -49,9 +52,18 @@ function init() {
         let cards = document.getElementsByClassName("card-color");
         for (let card of cards) {
             let backText = card.querySelector(".card-color-text");
-            $clamp(backText, {clamp: 6, useNativeClamp: false});
+            $clamp(backText, { clamp: 6, useNativeClamp: false });
             // $clamp(paragraph, {clamp: 1, useNativeClamp: false, animate: true});
         }
+    }
+
+    function colorButtonClick(button) {
+        let bgColor = getComputedStyle(button).backgroundColor.toString();
+
+        r.style.setProperty('--btn-bg-color', bgColor);
+        r.style.setProperty("--btn-color", "white");
+
+        button.classList.add("selectedButton");
     }
 
     function darkenCards() {
@@ -59,12 +71,18 @@ function init() {
         dark.addEventListener('click', () => {
             let cards = document.getElementsByClassName("card-color");
             for (let card of cards) {
-                let {hue, saturation, luminance} = getHSL(card);
+                let { hue, saturation, luminance } = getHSL(card);
 
                 luminance = 22;
 
-                changeColors(card,hue,saturation,luminance);
+                changeColors(card, hue, saturation, luminance);
             }
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("selectedButton");
+            }
+
+            colorButtonClick(dark);
+
         })
     }
 
@@ -74,11 +92,11 @@ function init() {
             let cards = document.getElementsByClassName("card-color");
             for (let card of cards) {
 
-                let {hue, saturation, luminance} = getHSL(card);
+                let { hue, saturation, luminance } = getHSL(card);
 
-                luminance=74;
+                luminance = 74;
 
-                changeColors(card,hue,saturation,luminance);
+                changeColors(card, hue, saturation, luminance);
             }
         })
     }
@@ -88,12 +106,12 @@ function init() {
         pastel.addEventListener('click', () => {
             let cards = document.getElementsByClassName("card-color");
             for (let card of cards) {
-                let {hue, saturation, luminance} = getHSL(card);
+                let { hue, saturation, luminance } = getHSL(card);
 
                 saturation = getRandomInt(35, 68);
                 luminance = 74;
 
-                changeColors(card,hue,saturation,luminance);
+                changeColors(card, hue, saturation, luminance);
 
             }
         })
@@ -104,13 +122,13 @@ function init() {
         warm.addEventListener('click', () => {
             let cards = document.getElementsByClassName("card-color");
             for (let card of cards) {
-                let {hue, saturation, luminance} = getHSL(card);
+                let { hue, saturation, luminance } = getHSL(card);
 
                 if (hue <= 270 && hue >= 90) {
                     // hue = (hue + 180)%360; // symétrie par rapport au centre
                     hue = (270 + (270 - hue)) % 360; // symétrie par rapport à l'axe horizontal
                 }
-                changeColors(card,hue,saturation,luminance);
+                changeColors(card, hue, saturation, luminance);
             }
         })
     }
@@ -121,17 +139,17 @@ function init() {
         cold.addEventListener('click', () => {
             let cards = document.getElementsByClassName("card-color");
             for (let card of cards) {
-                let {hue, saturation, luminance} = getHSL(card);
+                let { hue, saturation, luminance } = getHSL(card);
 
-                if (hue >= 270 ) {
+                if (hue >= 270) {
                     // A FAIRE CE N'EST PAS FAIT
                     hue = (270 - Math.abs(270 - hue)) % 360; // symétrie par rapport à l'axe horizontal
                 }
-                else if (hue <= 90){
+                else if (hue <= 90) {
                     hue = (90 + Math.abs(90 - hue)) % 360; // symétrie par rapport à l'axe horizontal
                 }
 
-                changeColors(card,hue,saturation,luminance);
+                changeColors(card, hue, saturation, luminance);
 
 
             }
@@ -141,10 +159,10 @@ function init() {
     function getHSL(card) {
         let hexCode = card.getAttribute("card-color"); // donne l'hexadécimal de la carte
 
-        let {r, g, b} = hexToRGB(hexCode);
+        let { r, g, b } = hexToRGB(hexCode);
 
-        let {hue, saturation, luminance} = RGBToHSL(r, g, b);
-        return {hue, saturation, luminance};
+        let { hue, saturation, luminance } = RGBToHSL(r, g, b);
+        return { hue, saturation, luminance };
     }
 
     function hexToRGB(hexCode) {
@@ -153,16 +171,16 @@ function init() {
         let g = parseInt(hexNumbers.slice(2, 4), 16);
         let b = parseInt(hexNumbers.slice(4, 6), 16);
 
-        return {r, g, b};
+        return { r, g, b };
     }
 
     function RGBToHex(r, g, b) {
         r = r.toString(16);
-        if(r.length==1){ r = '0' + r}
+        if (r.length == 1) { r = '0' + r }
         g = g.toString(16);
-        if(g.length==1){ g = '0' + g}
+        if (g.length == 1) { g = '0' + g }
         b = b.toString(16);
-        if(b.length==1){ b = '0' + b}
+        if (b.length == 1) { b = '0' + b }
 
         let hexCode = "#" + r.toString(16) + g.toString(16) + b.toString(16);
 
@@ -211,7 +229,7 @@ function init() {
         if (hue < 0) {
             hue += 360;
         }
-        return {hue, saturation, luminance};
+        return { hue, saturation, luminance };
 
     }
 
@@ -251,7 +269,7 @@ function init() {
 
             // Titre colors qui change de couleurs
             let colors = document.querySelector('.text-colors');
-            sweep(colors, 'color', '#a8f', '#a8f', {direction: -1, duration: 100000});
+            sweep(colors, 'color', '#a8f', '#a8f', { direction: -1, duration: 100000 });
 
             loop(colors);
         }
@@ -269,19 +287,19 @@ function init() {
     }
 
 
-// let color_dictionary = ['#F00', '#0F0', '#00F'];
-// let input = document.getElementById("input");
-// let i = 0;
-// let stringArray = '';
-// input.addEventListener("keypress", () => {
-//     // console.log(input.value.slice(-1));
-//     stringArray = input.value.split();
-//     stringArray.forEach(element => {
-//         input.value.innerText += `<span style="color:red">${element}</span>`;
-//     });
-//     input.style.caretColor = color_dictionary[i % 3];
-//     i++;
-// });
+    // let color_dictionary = ['#F00', '#0F0', '#00F'];
+    // let input = document.getElementById("input");
+    // let i = 0;
+    // let stringArray = '';
+    // input.addEventListener("keypress", () => {
+    //     // console.log(input.value.slice(-1));
+    //     stringArray = input.value.split();
+    //     stringArray.forEach(element => {
+    //         input.value.innerText += `<span style="color:red">${element}</span>`;
+    //     });
+    //     input.style.caretColor = color_dictionary[i % 3];
+    //     i++;
+    // });
 
     let cards = document.getElementsByClassName("card-color");
     for (let card of cards) {
@@ -320,7 +338,7 @@ function init() {
     }
 
     window.addEventListener('load',
-        function() {
+        function () {
             const loader = document.getElementById('loader-wrapper');
 
             loader.classList.remove('display');
@@ -328,7 +346,7 @@ function init() {
 
 }
 
-function displayLoader(){
+function displayLoader() {
     console.log("displayLoader");
     let loader = document.getElementById('loader-wrapper');
     loader.classList.add("display");
