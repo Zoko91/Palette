@@ -21,10 +21,11 @@ function init() {
     }
 
     let buttons = document.getElementsByClassName("btnp");
+    let cards = document.getElementsByClassName("card-color");
     let r = document.querySelector(':root');
 
     function setColors() {
-        let cards = document.getElementsByClassName("card-color");
+        
         for (let card of cards) {
             let frontCard = card.querySelector(".front");
             let backCard = card.querySelector(".back");
@@ -49,7 +50,7 @@ function init() {
     }
 
     function clampBackText() {
-        let cards = document.getElementsByClassName("card-color");
+        
         for (let card of cards) {
             let backText = card.querySelector(".card-color-text");
             $clamp(backText, { clamp: 6, useNativeClamp: false });
@@ -58,18 +59,38 @@ function init() {
     }
 
     function colorButtonClick(button) {
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove("selectedButton");
+        }
         let bgColor = getComputedStyle(button).backgroundColor.toString();
+        let color = getComputedStyle(button).color.toString();
+
 
         r.style.setProperty('--btn-bg-color', bgColor);
-        r.style.setProperty("--btn-color", "white");
+        r.style.setProperty("--btn-color", color);
 
         button.classList.add("selectedButton");
+    }
+
+    function colorButtonUnclick(button){
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove("selectedButton");
+        }
+        
+            for (let card of cards) {
+                let { hue, saturation, luminance } = getHSL(card);
+
+
+                changeColors(card, hue, saturation, luminance);
+            }
+
+
     }
 
     function darkenCards() {
         let dark = document.getElementsByClassName("Dark")[0];
         dark.addEventListener('click', () => {
-            let cards = document.getElementsByClassName("card-color");
+            
             for (let card of cards) {
                 let { hue, saturation, luminance } = getHSL(card);
 
@@ -77,11 +98,13 @@ function init() {
 
                 changeColors(card, hue, saturation, luminance);
             }
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].classList.remove("selectedButton");
+            if(!dark.classList.contains("selectedButton")){
+                colorButtonClick(dark);
             }
-
-            colorButtonClick(dark);
+            else{
+                colorButtonUnclick(dark);
+            }
+            
 
         })
     }
@@ -89,7 +112,7 @@ function init() {
     function lightenCards() {
         let light = document.getElementsByClassName("Light")[0];
         light.addEventListener('click', () => {
-            let cards = document.getElementsByClassName("card-color");
+            
             for (let card of cards) {
 
                 let { hue, saturation, luminance } = getHSL(card);
@@ -98,13 +121,19 @@ function init() {
 
                 changeColors(card, hue, saturation, luminance);
             }
+            if(!light.classList.contains("selectedButton")){
+                colorButtonClick(light);
+            }
+            else{
+                colorButtonUnclick(light);
+            }
         })
     }
 
     function pastelizeCards() { // low saturation for pastels
         let pastel = document.getElementsByClassName("Pastel")[0];
         pastel.addEventListener('click', () => {
-            let cards = document.getElementsByClassName("card-color");
+            
             for (let card of cards) {
                 let { hue, saturation, luminance } = getHSL(card);
 
@@ -114,13 +143,19 @@ function init() {
                 changeColors(card, hue, saturation, luminance);
 
             }
+            if(!pastel.classList.contains("selectedButton")){
+                colorButtonClick(pastel);
+            }
+            else{
+                colorButtonUnclick(pastel);
+            }
         })
     }
 
     function warmCards() { // low saturation for pastels
         let warm = document.getElementsByClassName("Warm")[0];
         warm.addEventListener('click', () => {
-            let cards = document.getElementsByClassName("card-color");
+            
             for (let card of cards) {
                 let { hue, saturation, luminance } = getHSL(card);
 
@@ -130,6 +165,12 @@ function init() {
                 }
                 changeColors(card, hue, saturation, luminance);
             }
+            if(!warm.classList.contains("selectedButton")){
+                colorButtonClick(warm);
+            }
+            else{
+                colorButtonUnclick(warm);
+            }
         })
     }
 
@@ -137,7 +178,7 @@ function init() {
         let cold = document.getElementsByClassName("Cold")[0];
 
         cold.addEventListener('click', () => {
-            let cards = document.getElementsByClassName("card-color");
+            
             for (let card of cards) {
                 let { hue, saturation, luminance } = getHSL(card);
 
@@ -152,6 +193,12 @@ function init() {
                 changeColors(card, hue, saturation, luminance);
 
 
+            }
+            if(!cold.classList.contains("selectedButton")){
+                colorButtonClick(cold);
+            }
+            else{
+                colorButtonUnclick(cold);
             }
         })
     }
@@ -301,7 +348,6 @@ function init() {
     //     i++;
     // });
 
-    let cards = document.getElementsByClassName("card-color");
     for (let card of cards) {
         var backCopy = card.querySelector(".back-copy");
 
