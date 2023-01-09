@@ -44,7 +44,8 @@ Say what the step will be
 git clone https://github.com/Zoko91/Palette.git
 cd Palette
 ```
-<!--
+
+You may want to enter in the venv before launching the app:
 ```
 # Windows
 >>> venvWindows\Scripts\activate
@@ -52,7 +53,7 @@ cd Palette
 # MacOS
 >>> .venv/bin/activate
 ```
--->
+
 After activating the venv, if you never installed Flask
 
 ```
