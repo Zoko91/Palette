@@ -22,7 +22,6 @@
 ## 📝 Table of Contents
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
 <!-- - [TODO](../TODO.md) -->
@@ -35,15 +34,6 @@ Palette is a project that uses natural language processing (NLP) and cognitive s
 
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
-
-### Prerequisites
-First and foremost, you need to make sure that you have dotnet and EntityFramework Core installed on your computer.
-
-```
-BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-BlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBlaBla
-```
 
 ### Installing
 A step by step series of examples that tell you how to get a development env running.
@@ -72,23 +62,6 @@ After activating the venv, if you never installed Flask
 Launch the website server on you localhost.
 ```
 >>> flask --app myApp run
-```
-
-## 🔧 Running the tests <a name = "tests"></a>
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-Explain what these tests test and why
-
-```
-Give an example
 ```
 
 <!-- ## 🎈 Usage <a name="usage"></a>
