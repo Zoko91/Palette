@@ -1,0 +1,9 @@
+{% block body %}
+
+<div id="container-palette">
+  {% for i in range(0, listColors|length) %} {% with cardNum = i, colorInfo =
+  listColors[i], contrast_color=contrasts[i] %} {% include
+  'includes/_cards.html' %}{% endwith %} {%endfor%}
+</div>
+
+{% endblock %}

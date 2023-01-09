@@ -1,0 +1,155 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#container-palette {
+  margin-top: 3%;
+  display: flex;
+}
+
+.container-card {
+  display: flex;
+  justify-content: center;
+  flex: 1 1;
+}
+
+.card-color {
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+}
+
+.front img,
+.back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-color .back {
+  transform: rotateY(-180deg);
+}
+
+.card-color.flipped .back {
+  transform: rotateY(0deg);
+}
+
+.card-color.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  z-index: 0;
+  border-radius: 25px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.card-color.flipped .front {
+  z-index: 1;
+}
+
+.card-color.flipped .back {
+  z-index: 0;
+}
+
+.back-info {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+
+  height: 70%;
+  background-color: white;
+  border-radius: 25px 25px 0px 0px;
+  padding-inline: 8%;
+}
+
+.back-info h4 {
+  margin-top: 2vh;
+}
+
+.back-info div:nth-child(1) {
+  height: 30%;
+}
+
+.back-info div:nth-child(2) {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-color {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  font-size: x-large;
+}
+
+.back-copy {
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+
+  position: absolute;
+  right: 5%;
+  top: 61%;
+}
+
+.back-copy svg {
+  transform: scale(0.4) translate(-28%, -47%);
+}
+
+.back-copy-confirm {
+  color: white;
+  position: absolute;
+  right: -19%;
+  top: 47%;
+  padding: 2%;
+  border-radius: 10px;
+  display: none;
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fadeIn 2s;
+}
+
+.fade-out {
+  animation: fadeOut 2s;
+}
+
+.card-color-text{
+  line-height: normal;
+}

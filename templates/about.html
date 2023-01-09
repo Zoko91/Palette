@@ -1,0 +1,143 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+<div class="container jumbotron text-center">
+	<h1><strong class="bg-transparent">Our Team</strong></h1>
+</div>
+<section>
+	<div class="container">
+		<div class="row flex-center sm-no-flex">
+
+			<div class="pull-right sm-no-float col-md-8">
+				<ul class="team-members">
+					<!-- single member row starts -->
+					<li class="clearfix">
+						<div class="member-details">
+							<div>
+								<a href="https://www.linkedin.com/in/thomaschimbault/" target="_blank">
+									<img src="{{ url_for('static',filename='images/thomas.png') }}"
+										alt="Thomas">
+									<div class="member-info">
+										<h3>Thomas <br> Chimbault</h3>
+									</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="member-details">
+							<div>
+								<a href="https://www.linkedin.com/in/josephbeasse/" target="_blank">
+									<img src="{{ url_for('static',filename='images/joseph.png') }}"
+										alt="Joseph">
+									<div class="member-info">
+										<h3>Joseph <br> Beasse</h3>
+									</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="member-details">
+							<div style="background: none" id="palette-logo-div">
+								<img src="{{ url_for('static',filename='images/logo_palette.png') }}"
+									alt="Palette's logo" width="70%"/>
+							</div>
+						</div>
+
+					</li><!-- /single member row ends -->
+
+					<!-- single member row starts -->
+					<li class="clearfix">
+						<div class="member-details" style="margin-left: 0">
+							<div>
+								<a href="https://www.linkedin.com/in/maeva-fortune/" target="_blank">
+									<img src="../static/images/Maeva.png" alt="Maëva">
+									<div class="member-info">
+										<h3>Maëva <br> Fortune</h3>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="member-details">
+							<div>
+								<a href="https://www.linkedin.com/in/christina-jeandes-5076b61ba/"
+									target="_blank">
+									<img src="../static/images/chris-removebg-preview.png" alt="Christina">
+									<div class="member-info">
+										<h3>Christina <br> Jeandes</h3>
+									</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="member-details">
+							<div>
+								<a href="https://www.linkedin.com/in/tristan-gclvs/" target="_blank">
+									<img src="../static/images/tristan.png" alt="Tristan">
+									<div class="member-info">
+										<h3>Tristan <br> Gonçalves</h3>
+									</div>
+								</a>
+							</div>
+						</div>
+
+
+
+
+					</li><!-- /single member row ends -->
+
+					<!-- single member row starts -->
+					<li class="clearfix">
+
+						<div class="member-details" style="margin-left: 20%">
+
+							<div>
+								<a href="https://www.linkedin.com/in/axelle-guillemot-432867242/"
+									target="_blank">
+									<img src="../static/images/Axelle-removebg-preview.png" alt="Axelle">
+									<div class="member-info">
+										<h3>Axelle <br> Guillemot</h3>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="member-details">
+							<div>
+								<a href="https://www.linkedin.com/in/benoît-lamirault/" target="_blank">
+									<img src="../static/images/BEnoit-removebg-preview.png" alt="Benoit">
+									<div class="member-info">
+										<h3>Benoît <br> Lamirault</h3>
+									</div>
+								</a>
+							</div>
+						</div>
+
+					</li><!-- /single member row ends -->
+
+				</ul><!-- /end team-photos -->
+			</div><!-- /end col-md-8 -->
+
+			<div class="pull-left col-md-4 sm-text-center">
+				<div class="team-overview">
+					<h2>Who Are We ?</h2>
+					<p><div>Palette is a project that was developed by a group of engineering
+							students. It combines the fields of natural language processing (NLP) and
+							cognitive science to create something truly innovative and exciting.
+						</div></p>
+				</div>
+				
+				
+			</div><!-- /end col-md-4 -->
+			
+			
+		</div><!-- /end row -->
+		<div class="team-overview my-5" style="position:absolute;bottom:-15vh;width: 35vw;">
+			<h2>Contact us</h2>
+			<p><div>If you have any questions, feel free to contact us at <a href="mailto:palette@ensc.fr">palette@ensc.fr</a>
+				</div></p>
+		</div>
+	</div><!-- /end container -->
+</section>
+
+{% endblock %}

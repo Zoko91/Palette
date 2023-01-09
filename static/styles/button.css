@@ -1,0 +1,111 @@
+.Dark {
+  border: 2px solid Dark;
+  background-color: transparent;
+  color: black;
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 30px;
+  transition-duration: 0.3s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Dark:hover {
+  background-color: black;
+  color: white;
+}
+
+.Light {
+  border: 2px solid white;
+  background-color: transparent;
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 30px;
+  transition-duration: 0.3s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Light:hover {
+  background-color: white;
+  color: black;
+}
+
+.Pastel {
+  border: 2px solid #c982e8;
+  background-color: transparent;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 30px;
+  transition-duration: 0.3s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Pastel:hover {
+  background-color: #c982e8;
+  color: white;
+}
+
+.Warm {
+  border: 2px solid #ea3636;
+  background-color: transparent;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 30px;
+  transition-duration: 0.3s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Warm:hover {
+  background-color: #ea3636;
+  color: white;
+}
+
+.Cold {
+  border: 2px solid #3480e3;
+  background-color: transparent;
+  padding: 12px 19px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 30px;
+  transition-duration: 0.3s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Cold:hover {
+  background-color: #3480e3;
+  color: white;
+}
+
+.Retry {
+  background: black;
+  border: 2px solid transparent;
+  color: white;
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 30px;
+  transition-duration: 0.5s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+}
+
+.Retry:hover {
+  border: 2px solid black;
+  /* background: linear-gradient(to right, red, yellow) border-box; */
+  background-color: white;
+  color: black;
+}
+
+.selectedButton {
+  background-color: var(--btn-bg-color);
+  color: var(--btn-color);
+}

@@ -1,0 +1,21 @@
+{% extends 'layout.html' %} {% block body %}
+
+<div class="container jumbotron text-center" id="palette" style="padding: 0">
+  <h1 class="enjoy bg-transparent">Enjoy your palette</h1>
+  <h2>"{{colors[0]}}"</h2>
+  {% with listColors = colors[1], contrasts = colors[2]%} {% include
+  'includes/_colors.html' %}{% endwith %}
+
+  <br /><br /><br />
+
+  <button class="Dark btnp">Dark</button>
+  <button class="Light btnp">Light</button>
+  <button class="Pastel btnp">Pastel</button>
+  <button class="Warm btnp">Warm</button>
+  <button class="Cold btnp">Cold</button>
+
+  <br /><br /><br />
+  <button class="Retry">RETRY</button>
+</div>
+
+{% endblock %}

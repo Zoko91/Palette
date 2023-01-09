@@ -1,0 +1,18 @@
+{% extends 'layout.html' %} {% block body %}
+
+<div class="container jumbotron text-center" id="history">
+  <h1><strong>HERE IS YOUR PALETTE HISTORY</strong></h1>
+  {% if palettes|length == 0 %}
+  <p>The history is empty</p>
+  {% else %}
+  <div>
+    <div>
+      {% for i in range(0,palettes|length)%} {% with listColors =
+      palettes[i][1], contrasts = palettes[i][2] %}
+      <p><strong>{{palettes[i][0]}}</strong></p>
+      {% include 'includes/_colors.html' %} {% endwith %} {%endfor%}
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
