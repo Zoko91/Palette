@@ -22,12 +22,8 @@
 ## 📝 Table of Contents
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Usage](#usage)
 - [Built Using](#built_using)
-<!-- - [TODO](../TODO.md) -->
-- [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 Palette is a project that uses natural language processing (NLP) and cognitive science to generate a palette of five colors based on a prompt given by a user. The prompt could be a word or phrase that describes a mood, theme, or concept, and the palette will be generated based on how the colors are associated with that prompt in the user's mind. For example, if the prompt is "beach," the palette might include shades of blue, green, and sandy yellow. Palette is a creative tool for designers, artists, and anyone looking for color inspiration.
