@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img  src="templates/ressources/palette_blanc.png" alt="Palette logo"></a>
+ <img  src="static/images/palette_blanc.png" alt="Palette logo"></a>
 </p>
 
 <h1 align="center">Palette</h1>
