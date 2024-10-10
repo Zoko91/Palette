@@ -94,4 +94,3 @@ Launch the website server on you localhost.
     <td>ENSC 2A </td>
   </tr>
 </table>
-</div>
