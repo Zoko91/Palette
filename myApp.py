@@ -4,7 +4,7 @@ import datetime
 import openai
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'dc71333b4e6fa696b1d85a0c9325cb6937b9f7701242030b'
+app.config['SECRET_KEY'] = '...'
 
 
 @app.route("/")

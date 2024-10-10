@@ -5,16 +5,6 @@
 
 <h1 align="center">Palette</h1>
 
-<!-- <div align="center">
-
-  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
-  [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-
-</div> -->
-
-<!-- --- -->
-
 <p align="center"> Projet Transpromotion (1A et 2A)
     <br> 
 </p>
@@ -61,12 +51,6 @@ Launch the website server on you localhost.
 >>> flask --app myApp run
 ```
 
-<!-- ## 🎈 Usage <a name="usage"></a>
-Add notes about how to use the system. -->
-
-<!-- ## 🚀 Deployment <a name = "deployment"></a>
-Add additional notes about how to deploy this on a live system. -->
-
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [Python3](https://www.python.org/download/releases/3.0/) - Programming Language
 - [Flask](https://flask.palletsprojects.com/en/2.2.x/) - Web development framework
@@ -110,10 +94,3 @@ Add additional notes about how to deploy this on a live system. -->
     <td>ENSC 2A </td>
   </tr>
 </table>
-</div>
-
-<!-- ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-- Hat tip to anyone whose code was used
-- Inspiration
-- References -->
- 
